@@ -1,0 +1,140 @@
+.dashboard-dosen-topbar {
+  background: rgba(230, 230, 230, 0.548);
+  width: 100%;
+  height: 90px;
+  border-radius: 10px;
+  padding: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-dosen-topbar .dash-avatar,
+.dashboard-dosen-topbar .dash-icon {
+  display: flex;
+}
+
+.dashboard-dosen-topbar .dash-icon > div {
+  padding: 4px;
+  margin: 0 4px;
+  border-radius: 5px;
+  transition: ease-in-out all 0.2s;
+}
+
+.dashboard-dosen-topbar .dash-icon > div:hover {
+  background: rgb(201, 201, 201);
+}
+
+.dashboard-dosen-topbar .dash-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-dosen-topbar .dash-avatar .username,
+.dashboard-dosen-topbar .dash-avatar .job-title {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.dashboard-dosen-topbar .dash-avatar .job-title {
+  font-size: 12px;
+  color: rgb(139, 139, 139);
+}
+
+.dashboard-dosen-topbar .dash-avatar .dash-img-avatar {
+  width: 60px;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-dosen-topbar .dash-avatar .dash-img-avatar .image-user {
+  width: 100%;
+  height: 100%;
+}
+
+.dash-card-wrapper {
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  border: rgb(238, 238, 238) solid 1px;
+  transition: ease-in-out all 0.3s;
+}
+
+.dash-card-wrapper:hover {
+  box-shadow: 0px 0px 61px -24px rgb(221, 221, 221);
+}
+
+.dash-card-wrapper .initial-matkul-wrapper {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .initial-matkul {
+  width: 75px;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .initial-matkul span {
+  background: #ffa927;
+  color: white;
+  width: 100%;
+  height: 75px;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .initial-matkul .data-info-dosen {
+  background: #0d6efd;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul {
+  margin-left: 12px;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .mata-kuliah {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .total-data-dosen {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .pertemuan-kuliah {
+  font-size: 12px;
+  color: rgb(107, 107, 107);
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .jadwal-kuliah {
+  font-size: 14px;
+  color: rgb(107, 107, 107);
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .isDone {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(0, 192, 42);
+  margin-top: 4px;
+}
+
+.dash-card-wrapper .initial-matkul-wrapper .desc-matkul > .isNotDone {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(192, 0, 0);
+  margin-top: 4px;
+}

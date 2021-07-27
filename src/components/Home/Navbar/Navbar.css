@@ -1,0 +1,18 @@
+/* START : Mobile */
+nav.nav.active {
+  height: 90px;
+}
+
+.navbar-home {
+  z-index: 9;
+}
+
+/* nav.nav.active .logo img {
+  width: 30px !important;
+} */
+
+/* nav.nav.active .menu-icon {
+  padding: 0 20px 0 0;
+} */
+
+/* END : Mobile */

@@ -1,0 +1,21 @@
+/* .navbar-dashboard-mhs-container {
+  background: transparent !important;
+  background-color: transparent !important;
+} */
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .navbar-dashboard-mhs-container {
+    height: 100px;
+    position: fixed;
+    z-index: 999 !important;
+  }
+
+  .collapse-bg {
+    background: #212529;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    right: 0;
+    z-index: 999 !important;
+  }
+}

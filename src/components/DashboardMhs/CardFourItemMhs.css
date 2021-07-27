@@ -1,0 +1,59 @@
+.card-wrapper {
+  height: max-content;
+}
+
+.card-wrapper.with-shadow {
+  transition: ease-in-out all 0.3s;
+}
+
+.card-wrapper.with-shadow:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-avatar {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-avatar .card-avatar-img {
+  transition: ease-in-out all 0.5s;
+  cursor: pointer;
+}
+
+.card-avatar .card-avatar-img:hover {
+  transform: scale(1.2);
+}
+
+.card-avatar .card-avatar-illustration {
+  width: 100%;
+  height: 270px;
+  padding: 20px;
+}
+
+.card-avatar .bagde-card {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  border-radius: 0;
+  padding: 10px 16px;
+}
+
+.card-header-title .icon-card,
+.card-header-sub-title .icon-card {
+  font-size: 18px !important;
+  margin-right: 10px !important;
+  font-weight: 600 !important;
+  color: rgb(53, 53, 53) !important;
+}
+
+/* .card-header-sub-title span {
+  font-size: 18px !important;
+  font-weight: bold !important;
+} */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .card-avatar .card-avatar-illustration {
+    width: 100%;
+  }
+}

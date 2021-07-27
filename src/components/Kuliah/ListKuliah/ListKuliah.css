@@ -1,0 +1,43 @@
+.list-matkul-wrapper {
+  height: 100vh !important;
+  width: 100vw;
+  margin-left: 20%;
+}
+
+.hamburger-icon {
+  display: flex;
+}
+
+.hamburger-icon svg {
+  width: 24px;
+  display: block;
+  margin-right: 12px;
+}
+
+.action__btn {
+  margin: 10px;
+}
+
+.create__btn {
+  margin-top: 5px;
+  transition: 250ms;
+}
+.btn {
+  margin-bottom: 20px;
+}
+.table-responsive {
+  margin: 25px 0;
+}
+.table-wrapper {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 3px;
+  min-width: 1000px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .list-matkul-wrapper {
+    margin-left: 0;
+  }
+}

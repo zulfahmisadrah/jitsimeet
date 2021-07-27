@@ -1,0 +1,168 @@
+.form-register-container {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container-register {
+  width: 702px;
+  position: relative;
+  border-radius: 10px;
+  height: 408px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgb(255, 255, 255) 0%,
+    rgb(255, 255, 255) 100%
+  );
+  max-height: 100vh;
+}
+
+.form-content-left {
+  position: relative;
+  top: 49.8%;
+  left: 43%;
+}
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 20px;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+.title-signup {
+  font-size: 1.7rem;
+  color: #444;
+  margin-bottom: 10px;
+  margin-left: 120px;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.form-img {
+  width: 408px;
+  height: 414px;
+  position: relative;
+  transform: translate(-50%, -50%);
+}
+
+.form-content-right {
+  position: relative;
+  right: 19%;
+  top: 10%;
+}
+
+.form-content-right h2 {
+  position: relative;
+  left: 37%;
+}
+
+.form-input-btn {
+  width: 77%;
+  height: 8%;
+  margin-top: 6px;
+  border-radius: 10px;
+  position: relative;
+  left: 20% !important;
+  background: linear-gradient(
+    90deg,
+    rgb(183, 194, 201) 0%,
+    rgb(109, 139, 139) 100%
+  );
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.form-input-login {
+  text-decoration: none;
+  color: black;
+  font-weight: 50;
+  font-size: 0.9rem;
+  position: relative;
+  left: 20%;
+}
+.form-input-login h4 {
+  text-decoration: none;
+  color: black;
+  font-weight: 50;
+  font-size: 0.9rem;
+  margin-top: 2%;
+  margin-left: -5% !important;
+  padding-top: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  /* .form-register-container {
+    width: 100vw !important;
+  } */
+
+  .form-container-register {
+    /* width: max-content; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .form-content-left {
+    display: none;
+  }
+
+  .form-content-right {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center;
+  }
+
+  .form-input-login h4 {
+    margin-left: -24% !important;
+  }
+
+  .form-content-right h3 {
+    margin: 0;
+  }
+
+  .form-input-btn {
+    left: 0;
+  }
+}
+
+/* @media (min-width: 769px) and (max-width: 1024px) {
+  .form-input-btn {
+    left: 20% !important;
+  }
+} */

@@ -1,0 +1,9 @@
+.btn-delete-matkul {
+    margin-left: 12px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .btn-delete-matkul {
+        margin-left: 0;
+    }
+}
