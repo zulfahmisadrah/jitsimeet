@@ -7,7 +7,7 @@ import { KuliahContext } from "../KuliahContext/KuliahContext";
 import "./Edit.css";
 import { useState } from "react";
 
-const Edit = () => {
+const Edit = (props) => {
   const [users, setUser] = useContext(KuliahContext);
   const { id } = useParams();
   const user = users.filter((user) => user.id == id);
@@ -29,9 +29,7 @@ const Edit = () => {
   };
 
   const editPosition = (e) => {
-    setPosition(e.target.value);
-    const edited_position = position;
-    users[0].position = edited_position;
+    users[0].position = e.target.value;
   };
 
   const editUser = (e) => {
@@ -40,7 +38,7 @@ const Edit = () => {
   };
 
   return (
-    <div className="edit">
+    <div className="">
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Kode Matakuliah</Form.Label>
@@ -74,16 +72,27 @@ const Edit = () => {
             placeholder={users[0].position}
           />
         </Form.Group>
-        <Link to="/ListKuliah">
-          <div className="mt-4 modal-edit-matkul">
-            <Button onSubmit={()=>editUser} className="btn btn-primary btn-edit-matkul" variant="primary" type="submit">
-              Simpan
-            </Button>
-            <Button className="btn btn-secondary " variant="secondary">
-             Kembali
-            </Button>
-          </div>
-          </Link>
+
+        <div className="mt-4 modal-edit-matkul">
+          <Button
+            onClick={(e) => {
+              editUser(e);
+              return props.onHide();
+            }}
+            className="btn btn-primary btn-edit-matkul"
+            variant="primary"
+            type="submit"
+          >
+            Simpan
+          </Button>
+          <Button
+            className="btn btn-secondary "
+            variant="secondary"
+            onClick={() => props.closeModal()}
+          >
+            Kembali
+          </Button>
+        </div>
       </Form>
     </div>
   );

@@ -23,7 +23,7 @@ export default function CardFeatures(props) {
           </Card.Title>
           <Card.Text
             style={{
-              fontSize: 20,
+              fontSize: 16,
               paddingBottom: 20,
             }}
           >

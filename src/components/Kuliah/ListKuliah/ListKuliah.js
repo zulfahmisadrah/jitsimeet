@@ -1,6 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./ListKuliah.css";
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  FormControl,
+  InputGroup,
+  Pagination,
+  Row,
+  Table,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { KuliahContext } from "../KuliahContext/KuliahContext";
 import { Modal } from "react-bootstrap";
@@ -57,7 +66,7 @@ const ListKuliah = (props) => {
 
         <h4 className="">Tabel Daftar Mata Kuliah</h4>
       </div>
-      <Row>
+      <Row className="d-flex align-items-center">
         <Col>
           <Button
             onClick={handleShow}
@@ -82,103 +91,153 @@ const ListKuliah = (props) => {
             <span>Tambah Kuliah</span>
           </Button>
         </Col>
-      </Row>
+        <Col lg={3}>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                style={{ width: 24 }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </InputGroup.Text>
 
-      <Row>
-        <Col>
-          <Table responsive striped bordered>
-            <thead>
-              <tr>
-                <th>Kode Matakuliah</th>
-                <th>Nama Matakuliah</th>
-                <th>Jumlah Peserta</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>{user.position}</td>
-                  <td>
-                    <Link to={"read/" + user.id}>
-                      <Button className="m-2" variant="success">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          style={{ width: 24, marginRight: 4 }}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                          />
-                        </svg>
-                        <span>Detail</span>
-                      </Button>
-                    </Link>
-                    {/* <Link to={"/edit/"+user.id}> */}
-                    <Button
-                      className="m-2"
-                      onClick={handleShowEdit}
-                      variant="info"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        style={{ width: 24, marginRight: 4 }}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                      <span>Edit</span>
-                    </Button>
-                    {/* </Link> */}
-                    <Link to={"/delete/" + user.id}>
-                      <Button className="m-2" variant="danger">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          style={{ width: 24, marginRight: 4 }}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                        <span>Delete</span>
-                      </Button>
-                    </Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
+            <FormControl
+              placeholder="Pencarian..."
+              aria-label="Pencarian..."
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
         </Col>
       </Row>
+
+      <div className="d-flex flex-column justify-content-between">
+        <Row>
+          <Col>
+            <Table responsive striped bordered>
+              <thead>
+                <tr>
+                  <th>Kode Matakuliah</th>
+                  <th>Nama Matakuliah</th>
+                  <th>Jumlah Peserta</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((user) => (
+                  <tr>
+                    <td>{user.id}</td>
+                    <td>{user.name}</td>
+                    <td>{user.position}</td>
+                    <td>
+                      <Link to={"read/" + user.id}>
+                        <Button className="m-2" variant="success">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            style={{ width: 24, marginRight: 4 }}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                            />
+                          </svg>
+                          <span>Detail</span>
+                        </Button>
+                      </Link>
+                      {/* <Link to={"/edit/"+user.id}> */}
+                      <Button
+                        className="m-2"
+                        onClick={handleShowEdit}
+                        variant="info"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          style={{ width: 24, marginRight: 4 }}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                        <span>Edit</span>
+                      </Button>
+                      {/* </Link> */}
+                      <Link to={"/delete/" + user.id}>
+                        <Button className="m-2" variant="danger">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            style={{ width: 24, marginRight: 4 }}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                          <span>Hapus</span>
+                        </Button>
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-end">
+            <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Ellipsis />
+
+              <Pagination.Item>{10}</Pagination.Item>
+              <Pagination.Item>{11}</Pagination.Item>
+              <Pagination.Item>{12}</Pagination.Item>
+              <Pagination.Item>{13}</Pagination.Item>
+              <Pagination.Item>{14}</Pagination.Item>
+
+              <Pagination.Ellipsis />
+              <Pagination.Item>{20}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
+          </Col>
+        </Row>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

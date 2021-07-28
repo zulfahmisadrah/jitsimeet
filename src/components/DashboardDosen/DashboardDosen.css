@@ -23,6 +23,10 @@
   transition: ease-in-out all 0.2s;
 }
 
+.dashboard-dosen-topbar .dash-icon > .hamburger-icon {
+  display: none;
+}
+
 .dashboard-dosen-topbar .dash-icon > div:hover {
   background: rgb(201, 201, 201);
 }
@@ -137,4 +141,10 @@
   font-weight: bold;
   color: rgb(192, 0, 0);
   margin-top: 4px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .dashboard-dosen-topbar .dash-icon > .hamburger-icon {
+    display: block;
+  }
 }

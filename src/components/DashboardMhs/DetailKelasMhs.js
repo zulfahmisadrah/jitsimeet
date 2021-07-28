@@ -1,5 +1,12 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import {
+  Col,
+  Container,
+  FormControl,
+  InputGroup,
+  Pagination,
+  Row,
+} from "react-bootstrap";
 import { useLocation, useParams } from "react-router-dom";
 import NavbarDashboardMhs from "../NavbarDashboardMhs";
 import CardFourItemMhs from "./CardFourItemMhs";
@@ -14,7 +21,40 @@ function DetailKelasMhs(props) {
     <div className="daftar-kelas-wrapper" style={{ position: "relative" }}>
       <NavbarDashboardMhs isDark />
       <Container>
-        <h1 className="my-4">List Kelas</h1>
+        <Row className="my-5 d-flex align-items-center">
+          <Col>
+            <h1 className="" style={{ textAlign: "left" }}>
+              Kelas&nbsp;{state.dataKuliah.text}
+            </h1>
+          </Col>
+          <Col lg={4}>
+            <InputGroup className="">
+              <InputGroup.Text id="basic-addon1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  style={{ width: 24 }}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </InputGroup.Text>
+              <FormControl
+                placeholder="Pencarian..."
+                aria-label="Pencarian..."
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
+          </Col>
+        </Row>
+        {/* <h1 className="my-4">Kelas&nbsp;{state.dataKuliah.text}</h1> */}
         <Row xs={1} md={2} lg={3}>
           {state.dataKuliah.pertemuan.map((data, i) => (
             <CardFourItemMhs
@@ -28,6 +68,28 @@ function DetailKelasMhs(props) {
               terlaksana={data.isDone}
             />
           ))}
+        </Row>
+
+        <Row>
+          <Col className="d-flex justify-content-center my-5">
+            <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Ellipsis />
+
+              <Pagination.Item>{10}</Pagination.Item>
+              <Pagination.Item>{11}</Pagination.Item>
+              <Pagination.Item>{12}</Pagination.Item>
+              <Pagination.Item>{13}</Pagination.Item>
+              <Pagination.Item>{14}</Pagination.Item>
+
+              <Pagination.Ellipsis />
+              <Pagination.Item>{20}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
+          </Col>
         </Row>
       </Container>
     </div>

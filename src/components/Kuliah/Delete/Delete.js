@@ -6,7 +6,7 @@ import { Button, Modal } from "react-bootstrap";
 import "./Delete.css";
 
 const Delete = () => {
-  const [users, setUser] = useContext(KuliahContext); 
+  const [users, setUser] = useContext(KuliahContext);
   const { id } = useParams();
 
   const deleteUser = (id) => {
@@ -21,11 +21,20 @@ const Delete = () => {
           <Modal.Title>Are You Sure?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Link to="/ListKuliah">
-            <Button onClick={() => deleteUser(id)} className="btn btn-danger" variant="danger">
+          <Link to="/DashboardDosen/kelas-dosen">
+            <Button
+              onClick={() => deleteUser(id)}
+              className="btn btn-danger"
+              variant="danger"
+            >
               Delete
             </Button>
-            <Button className="btn btn-secondary btn-delete-matkul" variant="secondary">Cancel</Button>
+            <Button
+              className="btn btn-secondary btn-delete-matkul"
+              variant="secondary"
+            >
+              Cancel
+            </Button>
           </Link>
         </Modal.Body>
       </Modal.Dialog>

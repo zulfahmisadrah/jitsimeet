@@ -39,8 +39,8 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="/Signin" style={{ textDecoration: "none" }}>
-            Sign In
+          <a href="/Signup" style={{ textDecoration: "none" }}>
+            Sign Up
           </a>
         </li>
       </ul>

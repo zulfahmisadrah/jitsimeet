@@ -60,13 +60,16 @@ function CardFourItemMhs(props) {
               <Button variant="primary" onClick={() => alert("meet")}>
                 Meet
               </Button>
-              <Button
-                variant="secondary"
-                className="mx-0 mx-lg-2"
-                onClick={() => history.goBack()}
-              >
-                Cancel
-              </Button>
+
+              {props.noCancelBtn && (
+                <Button
+                  variant="secondary"
+                  className="mx-0 mx-lg-2"
+                  onClick={() => history.goBack()}
+                >
+                  Batal
+                </Button>
+              )}
             </div>
           ) : (
             <Button

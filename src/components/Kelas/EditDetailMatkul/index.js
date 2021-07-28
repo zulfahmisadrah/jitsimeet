@@ -1,16 +1,16 @@
 import React, { useState, useContext } from "react";
-import "./Tambah.css";
+// import "./Tambah.css";
 import { Button, Form } from "react-bootstrap";
 import { KelasContext } from "../KelasContext/KelasContext";
 
-const Tambah = (props) => {
-  // const [id, setId] = useState(props.dataUser[0].id);
-  // const [name, setName] = useState(props.dataUser[0].name);
-  // const [position, setPosition] = useState(props.dataUser[0].position);
+const EditDetailMatkul = (props) => {
+  const [id, setId] = useState(props.dataUser[0].id);
+  const [name, setName] = useState(props.dataUser[0].name);
+  const [position, setPosition] = useState(props.dataUser[0].position);
 
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [position, setPosition] = useState("");
+  // const [id, setId] = useState("");
+  // const [name, setName] = useState("");
+  // const [position, setPosition] = useState("");
 
   const [kelass, setKelas] = useContext(KelasContext);
 
@@ -29,17 +29,14 @@ const Tambah = (props) => {
 
   const addKelas = (e) => {
     e.preventDefault();
-    const data = {
-      id,
-      idMataKuliah: "332D4E3",
-      name,
-      position,
-    };
-    props.newValue(data);
+    props.dataUser[0].id = id;
+    props.dataUser[0].name = name;
+    props.dataUser[0].position = position;
+
     return props.onHide();
   };
 
-  console.log(props.dataUser);
+  console.log(props);
 
   return (
     <div className="Tambah">
@@ -88,4 +85,4 @@ const Tambah = (props) => {
   );
 };
 
-export default Tambah;
+export default EditDetailMatkul;

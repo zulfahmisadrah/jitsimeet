@@ -1,15 +1,27 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./LihatKelas.css";
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  FormControl,
+  InputGroup,
+  Pagination,
+  Row,
+  Table,
+} from "react-bootstrap";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { KelasContext } from "../KelasContext/KelasContext";
 import { Modal } from "react-bootstrap";
 import Tambah from "../Tambah/Tambah";
+import EditDetailMatkul from "../EditDetailMatkul";
 
 const LihatKelas = (props) => {
   const [kelass, setKelas] = useContext(KelasContext);
   const [listKelas, setListKelas] = useState([]);
   const { id } = useParams();
+
+  console.log(props);
 
   useEffect(() => {
     const getKelasYangDifilter = kelass.filter(
@@ -30,7 +42,7 @@ const LihatKelas = (props) => {
 
   const handleShowEdit = (id) => {
     setShowEdit(true);
-    const kelasSelect = kelass.filter((data) => data.id === id);
+    const kelasSelect = listKelas.filter((data) => data.id === id);
     setSelectKelas(kelasSelect);
   };
 
@@ -49,6 +61,8 @@ const LihatKelas = (props) => {
     setKelas(kelasSelect);
     setShowDelete(false);
   };
+
+  console.log(selectKelas);
 
   return (
     <>
@@ -83,7 +97,7 @@ const LihatKelas = (props) => {
           <h4 className="">Tabel Detail Mata Kuliah</h4>
         </div>
 
-        <Row>
+        <Row className="d-flex align-items-center">
           <Col>
             <Button
               onClick={handleShow}
@@ -115,6 +129,32 @@ const LihatKelas = (props) => {
             >
               <span>Kembali</span>
             </Button>
+          </Col>
+          <Col lg={3}>
+            <InputGroup className="mb-3">
+              <InputGroup.Text id="basic-addon1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  style={{ width: 24 }}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </InputGroup.Text>
+              <FormControl
+                placeholder="Pencarian..."
+                aria-label="Pencarian..."
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
           </Col>
         </Row>
 
@@ -203,16 +243,16 @@ const LihatKelas = (props) => {
                             d="M6 18L18 6M6 6l12 12"
                           />
                         </svg>
-                        <span>Delete</span>
+                        <span>Hapus</span>
                       </Button>
                     </td>
 
                     <Modal show={showDelete} onHide={handleCloseDelete}>
                       <Modal.Header closeButton>
-                        <Modal.Title>Delete</Modal.Title>
+                        <Modal.Title>Hapus</Modal.Title>
                       </Modal.Header>
                       <Modal.Body>
-                        <p>Yakin Mau Delete ?</p>
+                        <p>Yakin Mau Hapus ?</p>
                         <Button onClick={() => confirmDeleteAction(kelas.id)}>
                           Ya
                         </Button>{" "}
@@ -231,13 +271,40 @@ const LihatKelas = (props) => {
             </Table>
           </Col>
         </Row>
+        <Row>
+          <Col className="d-flex justify-content-end">
+            <Pagination>
+              <Pagination.First />
+              <Pagination.Prev />
+              <Pagination.Item active>{1}</Pagination.Item>
+              <Pagination.Ellipsis />
+
+              <Pagination.Item>{10}</Pagination.Item>
+              <Pagination.Item>{11}</Pagination.Item>
+              <Pagination.Item>{12}</Pagination.Item>
+              <Pagination.Item>{13}</Pagination.Item>
+              <Pagination.Item>{14}</Pagination.Item>
+
+              <Pagination.Ellipsis />
+              <Pagination.Item>{20}</Pagination.Item>
+              <Pagination.Next />
+              <Pagination.Last />
+            </Pagination>
+          </Col>
+        </Row>
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Tambah Kelas</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Tambah />
+            <Tambah
+              dataUser={listKelas}
+              newValue={(value) => {
+                setListKelas([...listKelas, value]);
+              }}
+              onHide={handleClose}
+            />
           </Modal.Body>
         </Modal>
 
@@ -246,13 +313,10 @@ const LihatKelas = (props) => {
             <Modal.Title>Edit Detail Mata Kuliah</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Tambah
-              dataUser={
-                Array.isArray(selectKelas) && selectKelas.length > 0
-                  ? selectKelas[0]
-                  : {}
-              }
+            <EditDetailMatkul
+              dataUser={selectKelas}
               isEdit={true}
+              onHide={() => handleCloseEdit()}
             />
           </Modal.Body>
         </Modal>

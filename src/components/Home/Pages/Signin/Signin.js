@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signin.css";
 import { Link, useHistory } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
 
 const loginData = [
   {
@@ -70,6 +71,24 @@ const Signin = () => {
               value={password}
               onChange={onChangePassword}
             />
+          </div>
+          <div
+            className="d-flex align-items-center justify-content-between"
+            style={{ marginLeft: "7%", marginTop: 16 }}
+          >
+            <Form.Check
+              type="checkbox"
+              id="default-checkbox"
+              label="Remember Me"
+              // style={{ fontSize: 12 }}
+            />
+
+            <button
+              className="mb-0 text-secondary"
+              style={{ background: "transparent" }}
+            >
+              Forgot Password
+            </button>
           </div>
           <button
             onClick={() => handleSignIn()}

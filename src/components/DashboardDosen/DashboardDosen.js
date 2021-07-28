@@ -63,14 +63,25 @@ function DashboardDosen(props) {
   const [sidebarIsOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
 
+  const [showSidebar, setShowSidebar] = useState(false);
+
   console.log(props);
   return (
     <div>
       <div className="AppDashboardDosen wrapper">
-        <Sidebar toggle={toggleSidebar} isOpen={sidebarIsOpen} />
+        {/* <Sidebar toggle={toggleSidebar} isOpen={sidebarIsOpen}  /> */}
+        <Sidebar
+          toggle={toggleSidebar}
+          tesValue={showSidebar}
+          isOpen={(value) => {
+            console.log(value);
+            setShowSidebar(value);
+          }}
+        />
 
         {props.location.pathname === "/DashboardDosen" && (
-          <div className={`content ${!sidebarIsOpen ? "is-open" : ""} w-100`}>
+          // <div className={`content ${!sidebarIsOpen ? "is-open" : ""} w-100`}>
+          <div className={`content ${showSidebar ? "is-open" : ""} w-100`}>
             <div className="dashboard-dosen-topbar">
               <div className="dash-avatar">
                 <div className="dash-img-avatar">
@@ -95,10 +106,11 @@ function DashboardDosen(props) {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    onClick={() => toggleSidebar()}
+                    // onClick={() => toggleSidebar()}
+                    onClick={() => setShowSidebar(!showSidebar)}
                     style={{ marginRight: 0, marginLeft: 0, cursor: "pointer" }}
                   >
-                    {!sidebarIsOpen ? (
+                    {!showSidebar ? (
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -226,7 +238,7 @@ function DashboardDosen(props) {
                         className="mx-lg-2 mb-2"
                         size="sm"
                       >
-                        Cancel
+                        Batal
                       </Button>
                     </div>
                   </div>

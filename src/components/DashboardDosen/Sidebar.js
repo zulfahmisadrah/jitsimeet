@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,26 +16,50 @@ import SubMenu from "./SubMenu";
 import "./Sidebar.css";
 import Logo from "../../images/logo2.png";
 
-const Sidebar = ({ isOpen, toggle }) => {
+const Sidebar = ({ isOpen, toggle, tesValue }) => {
+  console.log(tesValue);
   return (
-    <div className={classNames("sidebar", { "is-open": isOpen })}>
+    // <div className={classNames("sidebar", { "is-open ": isOpen })}>
+    <div className={`sidebar ${!tesValue ? "is-open" : "show-sidebar"}`}>
       <div className="sidebar-header">
-        <span
+        {/* <span
           color="info"
           onClick={toggle}
-          style={{ color: "#fff", position: "absolute", right: 0 }}
+          style={{ color: "#fff", position: "fixed", right: 0 }}
         >
           &times;
-        </span>
+        </span> */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style={{
+            color: "#fff",
+            position: "absolute",
+            right: 10,
+            top: 10,
+            width: 24,
+          }}
+          onClick={() => isOpen(!tesValue)}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
         <div className="d-flex justify-content-center">
-          <img src={Logo} alt="" style={{ width: 150, marginTop: 25 }} />
+          <img src={Logo} alt="" style={{ width: 100, marginTop: 25 }} />
         </div>
-        <h4
+        <h5
           className="mb-0 text-white text-center"
-          style={{ paddingBottom: 25 }}
+          style={{ padding: "20px 20px" }}
         >
           Universitas Hasanuddin
-        </h4>
+        </h5>
       </div>
       <div className="side-menu">
         <Nav vertical className="list-unstyled pb-3">
@@ -56,7 +80,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           <NavItem>
             <NavLink tag={Link} to={"/"}>
               {/* <FontAwesomeIcon className="mr-2" /> */}
-              Logout
+              Keluar
             </NavLink>
           </NavItem>
         </Nav>
