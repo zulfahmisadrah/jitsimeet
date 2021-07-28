@@ -24,10 +24,11 @@ import DetailKuliahMhs from "./components/DashboardMhs/DetailKuliahMhs";
 import DetailKelasMhs from "./components/DashboardMhs/DetailKelasMhs";
 import { KuliahMhsProvider } from "./components/KuliahMhs/KuliahMhsContext/KuliahMhsContext";
 import ListKelasMhs from "./components/DashboardMhs/ListKelasMhs";
+import Meet from "./components/Meet/Meet";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ulfa/">
       <div className="App">
         <UserProvider>
           <KelasProvider>
@@ -55,6 +56,7 @@ function App() {
                   component={DetailKuliahMhs}
                 />
                 <Route path="/DetailKelasMhs" component={DetailKelasMhs} />
+                <Route path="/Meet/:id" component={Meet} />
                 <Route path="*" component={NotFound} />
               </Switch>
             </KuliahMhsProvider>

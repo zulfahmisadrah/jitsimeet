@@ -57,8 +57,8 @@ function CardFourItemMhs(props) {
           </Card.Text>
           {props.detaiKuliah ? (
             <div className="">
-              <Button variant="primary" onClick={() => alert("meet")}>
-                Meet
+              <Button variant="primary">
+                <Link to="/Meet/10">Meet</Link>
               </Button>
 
               {props.noCancelBtn && (

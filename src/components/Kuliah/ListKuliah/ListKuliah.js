@@ -253,7 +253,7 @@ const ListKuliah = (props) => {
           <Modal.Title>Edit Mata Kuliah</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Edit closeModal={handleCloseEdit} />
+          <Edit closeModal={handleCloseEdit}  onHide={handleCloseEdit}/>
         </Modal.Body>
       </Modal>
     </div>
