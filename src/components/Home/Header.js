@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import Navbar from './Navbar/Navbar'
 import './Style.css'
 import './Header.css'
@@ -12,7 +13,7 @@ function Header() {
             <div className='main-hero'>
                 <h1 className="hero-title"><span>Video Conference</span></h1>
                 <p className='hero-sub-tilte'>Jitsi Meet</p>
-                <a href='/Signin' className='cv-btn' style={{ textDecoration: 'none' }}>Sign In</a>
+                <Link to='/Signin' className='cv-btn' style={{ textDecoration: 'none' }}>Sign In</Link>
             </div>
         </div>
             {/* <div id='main'>

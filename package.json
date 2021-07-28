@@ -1,6 +1,7 @@
 {
   "name": "jitsicoba",
   "version": "0.1.0",
+  "homepage": "https://eng.unhas.ac.id/ulfa/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -26,6 +27,7 @@
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
+    "react-jutsu": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-slick": "^0.28.1",

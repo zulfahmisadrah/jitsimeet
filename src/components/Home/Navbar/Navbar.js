@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "./Navbar.css";
 
@@ -24,9 +25,9 @@ function Navbar() {
       </label>
       <ul className="menu">
         <li>
-          <a href="/" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#features" style={{ textDecoration: "none" }}>
@@ -39,9 +40,9 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="/Signup" style={{ textDecoration: "none" }}>
+          <Link to="/Signup" style={{ textDecoration: "none" }}>
             Sign Up
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

@@ -74,7 +74,7 @@ export default function NavbarDashboardMhs(props) {
               title={localStorage.getItem("username")}
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="#Logout">Logout</NavDropdown.Item>
+              <NavDropdown.Item href="/">Keluar</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

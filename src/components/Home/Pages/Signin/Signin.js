@@ -80,12 +80,13 @@ const Signin = () => {
               type="checkbox"
               id="default-checkbox"
               label="Remember Me"
-              // style={{ fontSize: 12 }}
+              // className="block"
+              style={{ fontSize: 14 }}
             />
 
             <button
               className="mb-0 text-secondary"
-              style={{ background: "transparent" }}
+              style={{ background: "transparent",fontSize: 14, marginLeft: 20 }}
             >
               Forgot Password
             </button>
