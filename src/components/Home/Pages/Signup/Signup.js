@@ -70,10 +70,10 @@ const Signup = () => {
           </button>{" "}
           <span className="form-input-login">
             <h4>
-              Already have an account? Login{" "}
+              Already have an account?{" "}
               <Link to="/Signin" className="text-primary">
                 {" "}
-                <a href="#">Here</a>{" "}
+                <a href="#">Sign In</a>{" "}
               </Link>{" "}
             </h4>
           </span>

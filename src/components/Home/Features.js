@@ -25,19 +25,6 @@ function Feature() {
           />
         </Row>
       </Container>
-      {/* <div className="a-container">
-        <FeaturesBox
-          image={featureimage}
-          title="Manajemen Kuliah Mahasiswa"
-          desc="Membantu Mahasiswa Untuk Memonitoring Mata Kuliah Yang Di Programkan"
-        />
-        <FeaturesBox
-          image={featureimage1}
-          title="Manajemen Mata Kuliah Dosen"
-          desc="Membantu Dosen Untuk Mengelola Mata Kuliah Yang Di Ajarkan"
-        />
-        <FeaturesBox image={featureimage2} title="INI" />
-      </div> */}
     </div>
   );
 }

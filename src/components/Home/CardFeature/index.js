@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
 
+
 export default function CardFeatures(props) {
   return (
     <Col>
-      <Card style={{ height: "max-content", marginTop: 24 }}>
+      <Card style={{ height: "max-content", marginTop: 24, backgroundColor:"#F9FEFB"}}>
         <Card.Img variant="top" src={props.img} className="p-4" />
         <Card.Body
           className="px-4"

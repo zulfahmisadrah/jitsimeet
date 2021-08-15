@@ -74,7 +74,7 @@ const Signin = () => {
           </div>
           <div
             className="d-flex align-items-center justify-content-between"
-            style={{ marginLeft: "7%", marginTop: 16 }}
+            style={{ marginLeft: "10%", marginTop: 15 }}
           >
             <Form.Check
               type="checkbox"
@@ -104,7 +104,7 @@ const Signin = () => {
               Dont have an account?{" "}
               <Link to="/Signup" className="text-primary">
                 {" "}
-                <a href="#">Here</a>{" "}
+                <a href="#">Sign Up</a>{" "}
               </Link>{" "}
             </h4>
           </span>

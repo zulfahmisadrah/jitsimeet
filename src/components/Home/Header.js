@@ -16,13 +16,6 @@ function Header() {
                 <Link to='/Signin' className='cv-btn' style={{ textDecoration: 'none' }}>Sign In</Link>
             </div>
         </div>
-            {/* <div id='main'>
-                <div className='name'>
-                    <h1 className="main-title"><span>Video Conference</span></h1>
-                    <p className='details'>Jitsi Meet</p>
-                    <a href='/Signin' className='cv-btn' style={{ textDecoration: 'none' }}>Sign In</a>
-                </div>
-            </div> */}
         </>
     )
 }
