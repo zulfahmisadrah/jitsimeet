@@ -96,7 +96,7 @@ nav .menu-btn,
   transform: translate(-22%, -50%);
 }
 .name span {
-  color: #00b7ff;
+  color: #125D98;
 }
 .name .details {
   color: #969696;
@@ -118,13 +118,13 @@ nav .menu-btn,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00b7ff;
-  box-shadow: 5px 10px 30px rgba(2, 238, 255, 0.336);
+  background-color: #125D98;
+  box-shadow: 5px 10px 30px rgba(0, 122, 131, 0.336);
   border-radius: 10px;
   color: #ffffff;
 }
 .cv-btn:hover {
-  background-color: #0099ff;
+  background-color: #00aeff;
   transition: all ease 0.5s;
   color: #ffffff;
 }

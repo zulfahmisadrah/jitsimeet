@@ -26,7 +26,7 @@ export default function NavbarDashboardMhs(props) {
     >
       <Container>
         <Navbar.Brand href="/DashboardMhs">
-          <img src={Logo} alt="" />
+          {/* <img src={Logo} alt="" /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse

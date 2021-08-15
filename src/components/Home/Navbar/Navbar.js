@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <nav className={`${nav ? "nav active" : "nav"} navbar-home`}>
       <a href="#" className="logo">
-        <img src={logo} alt="" />
+        {/* <img src={logo} alt="" /> */}
       </a>
       <input type="checkbox" className="menu-btn" id="menu-btn" />
       <label className="menu-icon" for="menu-btn">
