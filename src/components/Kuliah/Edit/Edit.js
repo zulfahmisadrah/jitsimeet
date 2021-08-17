@@ -80,14 +80,14 @@ const Edit = (props) => {
               return props.onHide();
             }}
             className="btn btn-primary btn-edit-matkul"
-            variant="primary"
+            variant="success"
             type="submit"
           >
             Simpan
           </Button>
           <Button
             className="btn btn-secondary "
-            variant="secondary"
+            variant="danger"
             onClick={() => props.closeModal()}
           >
             Kembali

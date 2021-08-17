@@ -77,8 +77,7 @@ const Tambah = (props) => {
           />
         </Form.Group>
         <Button
-          className="btn btn-primary"
-          variant="primary"
+          variant="success"
           onClick={(e) => addKelas(e)}
         >
           Simpan

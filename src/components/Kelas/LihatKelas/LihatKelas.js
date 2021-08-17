@@ -3,8 +3,7 @@ import "./LihatKelas.css";
 import {
   Button,
   Col,
-  Container,
-  FormControl,
+  Form,
   InputGroup,
   Pagination,
   Row,
@@ -19,7 +18,9 @@ import EditDetailMatkul from "../EditDetailMatkul";
 const LihatKelas = (props) => {
   const [kelass, setKelas] = useContext(KelasContext);
   const [listKelas, setListKelas] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const { id } = useParams();
+  const [active, setActive] = useState(1);
 
   console.log(props);
 
@@ -28,6 +29,7 @@ const LihatKelas = (props) => {
       (data) => data.idMataKuliah === id
     );
     setListKelas(getKelasYangDifilter);
+    setFilteredData(getKelasYangDifilter)
   }, []);
 
   const [show, setShow] = useState(false);
@@ -63,6 +65,27 @@ const LihatKelas = (props) => {
   };
 
   console.log(selectKelas);
+  
+  const totalPages = Math.ceil(listKelas.length/10)
+  let items = [];
+  for (let number = 1; number <= totalPages; number++) {
+    items.push(
+      <Pagination.Item key={number} active={number === active} onClick={() => setActive(number)}>
+        {number}
+      </Pagination.Item>,
+    );
+  }
+
+  const itemsPerPage = 10
+  const offset = (active-1)*itemsPerPage
+  const limit = offset+itemsPerPage
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const keyword = e.target.keyword.value.toLowerCase()
+    const filteredData = listKelas.filter(item => item.name.toLowerCase().includes(keyword))
+    setFilteredData(filteredData)
+  }
 
   return (
     <>
@@ -77,7 +100,7 @@ const LihatKelas = (props) => {
             onClick={props.isShowSidebar}
             style={{ cursor: "pointer" }}
           >
-            {props.isOpen ? (
+            {!props.isOpen ? (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -94,15 +117,15 @@ const LihatKelas = (props) => {
             )}
           </svg>
 
-          <h4 className="">Tabel Detail Mata Kuliah</h4>
+          <h4 className="mb-0">Detail Mata Kuliah</h4>
         </div>
 
         <Row className="d-flex align-items-center">
           <Col>
             <Button
               onClick={handleShow}
-              className="btn btn-success"
               data-toggle="modal"
+              variant="primary"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,37 +147,41 @@ const LihatKelas = (props) => {
 
             <Button
               onClick={() => history.goBack()}
-              className="btn btn-secondary btn-read-kembali"
+              className="btn-read-kembali"
               data-toggle="modal"
+              variant="danger"
             >
               <span>Kembali</span>
             </Button>
           </Col>
           <Col lg={3}>
-            <InputGroup className="mb-3">
-              <InputGroup.Text id="basic-addon1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  style={{ width: 24 }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </InputGroup.Text>
-              <FormControl
-                placeholder="Pencarian..."
-                aria-label="Pencarian..."
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
+            <Form noValidate onSubmit={handleSubmit}>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    style={{ width: 24 }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </InputGroup.Text>
+                <Form.Control
+                  name="keyword"
+                  placeholder="Pencarian..."
+                  aria-label="Pencarian..."
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>
+            </Form>
           </Col>
         </Row>
 
@@ -163,6 +190,7 @@ const LihatKelas = (props) => {
             <Table responsive striped bordered>
               <thead>
                 <tr>
+                  <th>No.</th>
                   <th>Judul Pertemuan</th>
                   <th>Waktu Pertemuan</th>
                   <th>Jumlah Siswa</th>
@@ -170,8 +198,9 @@ const LihatKelas = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {listKelas.map((kelas) => (
+                {filteredData.slice(offset, limit).map((kelas, index) => (
                   <tr>
+                    <td className="text-center">{offset+index+1}</td>
                     <td>{kelas.id}</td>
                     <td>{kelas.name}</td>
                     <td>{kelas.position}</td>
@@ -202,8 +231,8 @@ const LihatKelas = (props) => {
 
                       <Button
                         onClick={() => handleShowEdit(kelas.id)}
-                        className="btn btn-info  mb-0 m-2"
-                        variant="info"
+                        className="mb-0 m-2"
+                        variant="warning"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -228,22 +257,11 @@ const LihatKelas = (props) => {
                         className="btn btn-danger mb-0 m-2"
                         variant="danger"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          style={{ width: 24, marginRight: 4 }}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                        <span>Hapus</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                          </svg>
+                        <span> Hapus</span>
                       </Button>
                     </td>
 
@@ -274,21 +292,9 @@ const LihatKelas = (props) => {
         <Row>
           <Col className="d-flex justify-content-end">
             <Pagination>
-              <Pagination.First />
-              <Pagination.Prev />
-              <Pagination.Item active>{1}</Pagination.Item>
-              <Pagination.Ellipsis />
-
-              <Pagination.Item>{10}</Pagination.Item>
-              <Pagination.Item>{11}</Pagination.Item>
-              <Pagination.Item>{12}</Pagination.Item>
-              <Pagination.Item>{13}</Pagination.Item>
-              <Pagination.Item>{14}</Pagination.Item>
-
-              <Pagination.Ellipsis />
-              <Pagination.Item>{20}</Pagination.Item>
-              <Pagination.Next />
-              <Pagination.Last />
+              <Pagination.Prev onClick={() => active > 1 ? setActive(active-1) : setActive(active)}></Pagination.Prev>
+              {items}
+              <Pagination.Next onClick={() => active < totalPages ? setActive(active+1) : setActive(active)}></Pagination.Next>
             </Pagination>
           </Col>
         </Row>

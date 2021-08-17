@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Col,
   Container,
-  FormControl,
+  Form,
   InputGroup,
   Pagination,
   Row,
@@ -153,6 +153,34 @@ export default function ListKelasMhs(props) {
     },
   ];
 
+  const [filteredData, setFilteredData] = useState([]);
+  const [active, setActive] = useState(1);
+
+  useEffect(() => {
+    setFilteredData(data)
+  }, [])
+
+  const totalPages = Math.ceil(filteredData.length/10)
+  let items = [];
+  for (let number = 1; number <= totalPages; number++) {
+    items.push(
+      <Pagination.Item key={number} active={number === active} onClick={() => setActive(number)}>
+        {number}
+      </Pagination.Item>,
+    );
+  }
+
+  const itemsPerPage = 10
+  const offset = (active-1)*itemsPerPage
+  const limit = offset+itemsPerPage
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const keyword = e.target.keyword.value.toLowerCase()
+    const filteredData = data.filter(item => item.text.toLowerCase().includes(keyword))
+    setFilteredData(filteredData)
+  }
+
   return (
     <div className="">
       <NavbarDashboardMhs isDark />
@@ -164,34 +192,37 @@ export default function ListKelasMhs(props) {
             </h1>
           </Col>
           <Col lg={4}>
-            <InputGroup className="">
-              <InputGroup.Text id="basic-addon1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  style={{ width: 24 }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </InputGroup.Text>
-              <FormControl
-                placeholder="Pencarian..."
-                aria-label="Pencarian..."
-                aria-describedby="basic-addon1"
-              />
-            </InputGroup>
+            <Form noValidate onSubmit={handleSubmit}>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    style={{ width: 24 }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </InputGroup.Text>
+                <Form.Control
+                  name="keyword"
+                  placeholder="Pencarian..."
+                  aria-label="Pencarian..."
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>
+            </Form>
           </Col>
         </Row>
         <Row xs={1} md={2} lg={3}>
-          {data.map((item, i) => (
+        {filteredData.slice(offset, limit).map((item, i) => (
             <CardFourItemMhs
               noHover
               key={i}
@@ -208,21 +239,9 @@ export default function ListKelasMhs(props) {
         <Row>
           <Col className="d-flex justify-content-center my-5">
             <Pagination>
-              <Pagination.First />
-              <Pagination.Prev />
-              <Pagination.Item active>{1}</Pagination.Item>
-              <Pagination.Ellipsis />
-
-              <Pagination.Item>{10}</Pagination.Item>
-              <Pagination.Item>{11}</Pagination.Item>
-              <Pagination.Item>{12}</Pagination.Item>
-              <Pagination.Item>{13}</Pagination.Item>
-              <Pagination.Item>{14}</Pagination.Item>
-
-              <Pagination.Ellipsis />
-              <Pagination.Item>{20}</Pagination.Item>
-              <Pagination.Next />
-              <Pagination.Last />
+              <Pagination.Prev onClick={() => active > 1 ? setActive(active-1) : setActive(active)}></Pagination.Prev>
+              {items}
+              <Pagination.Next onClick={() => active < totalPages ? setActive(active+1) : setActive(active)}></Pagination.Next>
             </Pagination>
           </Col>
         </Row>

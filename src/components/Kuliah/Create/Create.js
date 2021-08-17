@@ -76,7 +76,7 @@ const Create = (props) => {
               <Button
                 className=""
                 onClick={props.closeModal}
-                variant="primary"
+                variant="success"
                 type="submit"
               >
                 Tambah Kuliah
@@ -85,7 +85,7 @@ const Create = (props) => {
               <Button
                 className="btn-batal"
                 onClick={() => props.closeModal()}
-                variant="secondary"
+                variant="danger"
                 // type="submit"
               >
                 Batal

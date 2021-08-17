@@ -1,20 +1,11 @@
 import React, { useState } from "react";
-// import Nav from './Sidebar';
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import Figure from "react-bootstrap/Figure";
 import Sidebar from "./Sidebar";
-import Topbar from "./Topbar";
-import classNames from "classnames";
-import Reminder from "./Reminder";
 import { Route } from "react-router-dom";
 import ListKuliah from "../Kuliah/ListKuliah/ListKuliah";
 import Read from "../Kuliah/Read/Read";
-// import Calendar from "./Calendar";
-// import Info from './Info';
 import "./DashboardDosen.css";
 
 function DashboardDosen(props) {
@@ -63,41 +54,18 @@ function DashboardDosen(props) {
   const [sidebarIsOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
 
-  const [showSidebar, setShowSidebar] = useState(false);
-
   console.log(props);
   return (
     <div>
       <div className="AppDashboardDosen wrapper">
-        {/* <Sidebar toggle={toggleSidebar} isOpen={sidebarIsOpen}  /> */}
         <Sidebar
           toggle={toggleSidebar}
-          tesValue={showSidebar}
-          isOpen={(value) => {
-            console.log(value);
-            setShowSidebar(value);
-          }}
+          isOpen={sidebarIsOpen}
         />
 
         {props.location.pathname === "/DashboardDosen" && (
-          // <div className={`content ${!sidebarIsOpen ? "is-open" : ""} w-100`}>
-          <div className={`content ${showSidebar ? "is-open" : ""} w-100`}>
+          <div className={`content content-sidebar ${!sidebarIsOpen ? "dashboard-sidebar-isopen is-open" : ""} w-100`}>
             <div className="dashboard-dosen-topbar">
-              <div className="dash-avatar">
-                <div className="dash-img-avatar">
-                  <img
-                    className="image-user"
-                    src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-                    alt="dummy"
-                  />
-                </div>
-
-                <div className="dash-desc">
-                  <p className="username mb-0">Jhon Doe</p>
-                  <p className="job-title mb-0">UI/UX Desainer</p>
-                </div>
-              </div>
-
               <div className="dash-icon">
                 <div className="hamburger-icon">
                   <svg
@@ -106,11 +74,10 @@ function DashboardDosen(props) {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    // onClick={() => toggleSidebar()}
-                    onClick={() => setShowSidebar(!showSidebar)}
+                    onClick={toggleSidebar}
                     style={{ marginRight: 0, marginLeft: 0, cursor: "pointer" }}
                   >
-                    {!showSidebar ? (
+                    {sidebarIsOpen ? (
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -127,7 +94,9 @@ function DashboardDosen(props) {
                     )}
                   </svg>
                 </div>
+              </div>
 
+              <div className="dash-icon">
                 <div className="notifikasi">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -168,6 +137,15 @@ function DashboardDosen(props) {
                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
+                </div>
+                <div className="dash-avatar">
+                  <div className="dash-img-avatar">
+                    <img
+                      className="image-user"
+                      src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+                      alt="dummy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,7 +212,7 @@ function DashboardDosen(props) {
                         Meet
                       </Button>
                       <Button
-                        variant="secondary"
+                        variant="danger"
                         className="mx-lg-2 mb-2"
                         size="sm"
                       >
@@ -245,9 +223,6 @@ function DashboardDosen(props) {
                 </Col>
               ))}
             </Row>
-            {/* <Reminder isOpen={!sidebarIsOpen} /> */}
-            {/* <Calendar/> */}
-            {/* <Info/> */}
           </div>
         )}
 

@@ -63,7 +63,7 @@ function CardFourItemMhs(props) {
 
               {props.noCancelBtn && (
                 <Button
-                  variant="secondary"
+                  variant="danger"
                   className="mx-0 mx-lg-2"
                   onClick={() => history.goBack()}
                 >

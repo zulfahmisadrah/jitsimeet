@@ -8,6 +8,7 @@ import {BrowserRouter} from 'react-router-dom';
 import jQuery from 'jquery';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 ReactDOM.render(
   <React.StrictMode>

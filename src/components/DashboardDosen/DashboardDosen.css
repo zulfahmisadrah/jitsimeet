@@ -11,9 +11,19 @@
   align-items: center;
 }
 
+.dashboard-sidebar-isopen {
+	margin-left: 0;
+	max-width: 100%;
+}
+
+.content-sidebar {
+	transition: all 0.5s;
+}
+
 .dashboard-dosen-topbar .dash-avatar,
 .dashboard-dosen-topbar .dash-icon {
   display: flex;
+  align-items: center;
 }
 
 .dashboard-dosen-topbar .dash-icon > div {
@@ -21,10 +31,6 @@
   margin: 0 4px;
   border-radius: 5px;
   transition: ease-in-out all 0.2s;
-}
-
-.dashboard-dosen-topbar .dash-icon > .hamburger-icon {
-  display: none;
 }
 
 .dashboard-dosen-topbar .dash-icon > div:hover {
@@ -50,7 +56,7 @@
 }
 
 .dashboard-dosen-topbar .dash-avatar .dash-img-avatar {
-  width: 60px;
+  width: 50px;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
@@ -141,10 +147,4 @@
   font-weight: bold;
   color: rgb(192, 0, 0);
   margin-top: 4px;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  .dashboard-dosen-topbar .dash-icon > .hamburger-icon {
-    display: block;
-  }
 }
