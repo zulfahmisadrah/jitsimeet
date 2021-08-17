@@ -20,7 +20,6 @@ import Hapus from "./components/Kelas/Hapus/Hapus";
 import { KelasProvider } from "./components/Kelas/KelasContext/KelasContext";
 import DashboardMhs from "./components/DashboardMhs/DashboardMhs";
 import ListKuliahMhs from "./components/KuliahMhs/ListKuliah/ListKuliahMhs";
-import LihatKelasMhs from "./components/KelasMhs/LihatKelas/LihatKelasMhs";
 import DetailKuliahMhs from "./components/DashboardMhs/DetailKuliahMhs";
 import DetailKelasMhs from "./components/DashboardMhs/DetailKelasMhs";
 import { KuliahMhsProvider } from "./components/KuliahMhs/KuliahMhsContext/KuliahMhsContext";
@@ -50,7 +49,6 @@ function App() {
                 <Route path="/LihatKelas" component={LihatKelas} />
                 <Route path="/Hapus" component={Hapus} />
                 <Route path="/ListkuliahMhs" component={ListKuliahMhs} />
-                <Route path="/LihatKelasMhs" component={LihatKelasMhs} />
                 <Route path="/list-kelas-mhs" component={ListKelasMhs} />
                 <Route
                   path="/DetailKuliahMhs/:id"
