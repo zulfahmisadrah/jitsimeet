@@ -19,10 +19,8 @@ import EditKelas from "./components/Kelas/EditKelas/EditKelas";
 import Hapus from "./components/Kelas/Hapus/Hapus";
 import { KelasProvider } from "./components/Kelas/KelasContext/KelasContext";
 import DashboardMhs from "./components/DashboardMhs/DashboardMhs";
-import ListKuliahMhs from "./components/KuliahMhs/ListKuliah/ListKuliahMhs";
 import DetailKuliahMhs from "./components/DashboardMhs/DetailKuliahMhs";
 import DetailKelasMhs from "./components/DashboardMhs/DetailKelasMhs";
-import { KuliahMhsProvider } from "./components/KuliahMhs/KuliahMhsContext/KuliahMhsContext";
 import ListKelasMhs from "./components/DashboardMhs/ListKelasMhs";
 import Meet from "./components/Meet/Meet";
 
@@ -32,7 +30,6 @@ function App() {
       <div className="App">
         <UserProvider>
           <KelasProvider>
-            <KuliahMhsProvider>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/Signin" component={Signin} />
@@ -48,7 +45,6 @@ function App() {
                 <Route path="/Tambah" component={Tambah} />
                 <Route path="/LihatKelas" component={LihatKelas} />
                 <Route path="/Hapus" component={Hapus} />
-                <Route path="/ListkuliahMhs" component={ListKuliahMhs} />
                 <Route path="/list-kelas-mhs" component={ListKelasMhs} />
                 <Route
                   path="/DetailKuliahMhs/:id"
@@ -58,7 +54,6 @@ function App() {
                 <Route path="/Meet/:id" component={Meet} />
                 <Route path="*" component={NotFound} />
               </Switch>
-            </KuliahMhsProvider>
           </KelasProvider>
         </UserProvider>
       </div>
