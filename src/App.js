@@ -21,6 +21,7 @@ import { KelasProvider } from "./components/Kelas/KelasContext/KelasContext";
 import DashboardMhs from "./components/DashboardMhs/DashboardMhs";
 import DetailKuliahMhs from "./components/DashboardMhs/DetailKuliahMhs";
 import DetailKelasMhs from "./components/DashboardMhs/DetailKelasMhs";
+
 import ListKelasMhs from "./components/DashboardMhs/ListKelasMhs";
 import Meet from "./components/Meet/Meet";
 
@@ -30,6 +31,8 @@ function App() {
       <div className="App">
         <UserProvider>
           <KelasProvider>
+            {/* <KuliahMhsProvider> */}
+
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/Signin" component={Signin} />
@@ -45,6 +48,8 @@ function App() {
                 <Route path="/Tambah" component={Tambah} />
                 <Route path="/LihatKelas" component={LihatKelas} />
                 <Route path="/Hapus" component={Hapus} />
+                {/* <Route path="/ListkuliahMhs" component={ListKuliahMhs} /> */}
+                {/* <Route path="/LihatKelasMhs" component={LihatKelasMhs} /> */}
                 <Route path="/list-kelas-mhs" component={ListKelasMhs} />
                 <Route
                   path="/DetailKuliahMhs/:id"
@@ -54,6 +59,9 @@ function App() {
                 <Route path="/Meet/:id" component={Meet} />
                 <Route path="*" component={NotFound} />
               </Switch>
+
+            {/* </KuliahMhsProvider> */}
+
           </KelasProvider>
         </UserProvider>
       </div>

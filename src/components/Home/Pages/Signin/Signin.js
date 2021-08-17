@@ -47,6 +47,7 @@ const Signin = () => {
     }
   };
   return (
+    <form method="POST" onSubmit={() => handleSignIn()}>
     <div className="login-container">
       <div className="form-container-login">
         <div className="form-login-right">
@@ -111,6 +112,7 @@ const Signin = () => {
         </div>
       </div>
     </div>
+    </form>
   );
 };
 
