@@ -43,7 +43,7 @@ const ListKuliah = (props) => {
     setShowDelete(false);
   };
 
-  const totalPages = Math.ceil(filteredData.length/10)
+  const totalPages = Math.ceil(filteredData.length/5)
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
     items.push(
@@ -53,7 +53,7 @@ const ListKuliah = (props) => {
     );
   }
 
-  const itemsPerPage = 10
+  const itemsPerPage = 5
   const offset = (active-1)*itemsPerPage
   const limit = offset+itemsPerPage
 
@@ -205,7 +205,7 @@ const ListKuliah = (props) => {
                       </Link>
                       {/* <Link to={"/edit/"+user.id}> */}
                       <Button
-                        className="m-2"
+                        className="m-2" 
                         onClick={handleShowEdit}
                         variant="warning"
                       >
@@ -215,7 +215,7 @@ const ListKuliah = (props) => {
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
-                          style={{ width: 24, marginRight: 4 }}
+                          style={{ width: 24, marginRight: 4}}
                         >
                           <path
                             strokeLinecap="round"

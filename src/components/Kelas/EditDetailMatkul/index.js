@@ -85,7 +85,7 @@ const EditDetailMatkul = (props) => {
           variant="danger"
           onClick={() => props.onHide()}
         >
-          Kembali
+          Batal
         </Button>
       </Form>
     </div>

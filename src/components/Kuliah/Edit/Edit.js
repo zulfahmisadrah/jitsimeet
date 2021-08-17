@@ -90,7 +90,7 @@ const Edit = (props) => {
             variant="danger"
             onClick={() => props.closeModal()}
           >
-            Kembali
+            Batal
           </Button>
         </div>
       </Form>
