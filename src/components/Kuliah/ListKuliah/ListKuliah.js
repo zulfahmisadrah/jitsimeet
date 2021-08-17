@@ -23,6 +23,7 @@ const ListKuliah = (props) => {
 
   const [show, setShow] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
 
   useEffect(() => {
     setFilteredData(users)
@@ -33,7 +34,15 @@ const ListKuliah = (props) => {
 
   const handleShowEdit = () => setShowEdit(true);
   const handleCloseEdit = () => setShowEdit(false);
-  
+  const handleCloseDelete = () => setShowDelete(true);
+
+  const confirmDeleteAction = (id) => {
+    console.log("id", id);
+    const user = users.filter((user) => user.id !== id);
+    setUser([...user]);
+    setShowDelete(false);
+  };
+
   const totalPages = Math.ceil(filteredData.length/10)
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
@@ -218,15 +227,34 @@ const ListKuliah = (props) => {
                         <span>Edit</span>
                       </Button>
                       {/* </Link> */}
-                      <Link to={"/delete/" + user.id}>
-                        <Button className="m-2" variant="danger">
+                      <Button onClick={() => handleCloseDelete(user.id)}
+                        className="m-2"
+                        variant="danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                             <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                           </svg>
                           <span> Hapus</span>
+                      </Button>
+
+                      <Modal show={showDelete} onHide={() => setShowDelete(false)}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Hapus</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <p>Yakin Mau Hapus ?</p>
+                        <Button onClick={() => confirmDeleteAction(user.id)}>
+                          Ya
+                        </Button>{" "}
+                        <Button
+                          class="btn btn-secondary"
+                          variant="danger"
+                          onClick={() => setShowDelete(false)}
+                        >
+                          Tidak
                         </Button>
-                      </Link>
+                      </Modal.Body>
+                    </Modal>
                     </td>
                   </tr>
                 ))}

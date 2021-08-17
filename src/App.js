@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Home from "./components/Home/Home";
 import Signin from "./components/Home/Pages/Signin/Signin";
 import Signup from "./components/Home/Pages/Signup/Signup";

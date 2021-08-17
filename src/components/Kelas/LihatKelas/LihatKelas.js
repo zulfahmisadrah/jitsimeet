@@ -58,9 +58,9 @@ const LihatKelas = (props) => {
 
   const confirmDeleteAction = (id) => {
     console.log("id", id);
-    const kelasSelect = kelass.filter((data) => data.id !== id);
+    const kelasSelect = filteredData.filter((data) => data.id !== id);
     console.log("kelasSelect", kelasSelect);
-    setKelas(kelasSelect);
+    setFilteredData(kelasSelect);
     setShowDelete(false);
   };
 
@@ -149,7 +149,7 @@ const LihatKelas = (props) => {
               onClick={() => history.goBack()}
               className="btn-read-kembali"
               data-toggle="modal"
-              variant="danger"
+              variant="secondary"
             >
               <span>Kembali</span>
             </Button>
@@ -265,7 +265,7 @@ const LihatKelas = (props) => {
                       </Button>
                     </td>
 
-                    <Modal show={showDelete} onHide={handleCloseDelete}>
+                    <Modal show={showDelete} onHide={() => setShowDelete(false)}>
                       <Modal.Header closeButton>
                         <Modal.Title>Hapus</Modal.Title>
                       </Modal.Header>
@@ -276,7 +276,7 @@ const LihatKelas = (props) => {
                         </Button>{" "}
                         <Button
                           class="btn btn-secondary"
-                          variant="secondary"
+                          variant="danger"
                           onClick={() => setShowDelete(false)}
                         >
                           Tidak
