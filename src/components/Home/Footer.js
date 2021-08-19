@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
 
 function FooterMhs() {
   return (
@@ -14,38 +13,42 @@ function FooterMhs() {
             <h2>Contact Us</h2>
               <div class="social-media-wrap">
                 <div class="social-icons">
-                  <Link
+                  <a
                     class="social-icon-link facebook"
-                    to="/"
+                    href="https://www.facebook.com/hasanuddin.university/"
                     target="_blank"
                     aria-label="Facebook"
+                    rel="noreferrer"
                   >
                     <i class="fab fa-facebook-f" />
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     class="social-icon-link instagram"
-                    to="/"
+                    href="https://www.instagram.com/hasanuddin_univ/"
                     target="_blank"
                     aria-label="Instagram"
+                    rel="noreferrer"
                   >
                     <i class="fab fa-instagram" />
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     class="social-icon-link youtube"
-                    to="/"
+                    href="https://www.youtube.com/channel/UCRk4cMetUOgh8SJ73_Hr4Og"
                     target="_blank"
                     aria-label="Youtube"
+                    rel="noreferrer"
                   >
                     <i class="fab fa-youtube" />
-                  </Link>
-                  <Link
+                  </a>
+                  <a
                     class="social-icon-link twitter"
-                    to="/"
+                    href="https://twitter.com/Hasanuddin_univ"
                     target="_blank"
                     aria-label="Twitter"
+                    rel="noreferrer"
                   >
                     <i class="fab fa-twitter" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </section>
