@@ -142,7 +142,7 @@ const LihatKelas = (props) => {
                   d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                 />
               </svg>
-              <span>Tambah Kelas</span>
+              <span>Tambah Pertemuan</span>
             </Button>
 
             <Button
@@ -301,7 +301,7 @@ const LihatKelas = (props) => {
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Tambah Kelas</Modal.Title>
+            <Modal.Title>Tambah Pertemuan</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Tambah
@@ -316,7 +316,7 @@ const LihatKelas = (props) => {
 
         <Modal show={showEdit} onHide={handleCloseEdit}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit Detail Mata Kuliah</Modal.Title>
+            <Modal.Title>Edit Pertemuan</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <EditDetailMatkul
