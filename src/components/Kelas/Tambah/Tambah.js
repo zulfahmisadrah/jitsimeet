@@ -79,8 +79,16 @@ const Tambah = (props) => {
         <Button
           variant="success"
           onClick={(e) => addKelas(e)}
+          style={{marginRight: 12}}
         >
           Simpan
+        </Button>
+        <Button
+          className="btn btn-secondary "
+          variant="danger"
+          onClick={() => props.onHide()}
+        >
+          Batal
         </Button>
       </Form>
     </div>
