@@ -22,7 +22,7 @@ const Signup = () => {
   };
 
   const handleSignup = () => {
-    history.push("/Dashboard");
+    history.push("/SignIn");
   };
 
   return (
