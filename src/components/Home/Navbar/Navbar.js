@@ -25,9 +25,9 @@ function Navbar() {
       </label>
       <ul className="menu">
         <li>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <a href="#home" style={{ textDecoration: "none" }}>
             Home
-          </Link>
+          </a>
         </li>
         <li>
           <a href="#features" style={{ textDecoration: "none" }}>
