@@ -3,10 +3,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Sidebar from "./Sidebar";
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import ListKuliah from "../Kuliah/ListKuliah/ListKuliah";
 import Read from "../Kuliah/Read/Read";
 import "./DashboardDosen.css";
+import keamananinternet from "../../images/keamananinternet.svg";
+import multimedia from "../../images/multimedia.svg";
+import website from "../../images/website.svg";
+import pemrogramanmobile from "../../images/pemrogramanmobile.svg";
+import DetailKelasMhs from './../DashboardMhs/DetailKelasMhs';
 
 function DashboardDosen(props) {
   const dataInfo = [
@@ -22,32 +27,36 @@ function DashboardDosen(props) {
 
   const dataReminder = [
     {
-      inisialMatkul: "kj",
+      icon: keamananinternet,
       matkul: "Keamanan Jaringan",
       pertemuan: 4,
       jadwal: "Selasa, 24 November 2021",
       isDone: false,
+      id: "32DD433"
     },
     {
-      inisialMatkul: "m",
+      icon: multimedia,
       matkul: "Multimedia",
       pertemuan: 5,
       jadwal: "Rabu, 23 November 2021",
       isDone: false,
+      id: "32DD432"
     },
     {
-      inisialMatkul: "pw",
+      icon: website,
       matkul: "Pemrograman Website",
       pertemuan: 4,
       jadwal: "Kamis, 25 November 2021",
       isDone: false,
+      id: "32DD434"
     },
     {
-      inisialMatkul: "pm",
+      icon: pemrogramanmobile,
       matkul: "Pemrograman Mobile",
       pertemuan: 4,
       jadwal: "Senin, 21 November 2021",
       isDone: false,
+      id: "32DD435"
     },
   ];
 
@@ -187,7 +196,13 @@ function DashboardDosen(props) {
                   <div className="dash-card-wrapper">
                     <div className="initial-matkul-wrapper">
                       <div className="initial-matkul">
-                        <span className="">{data.inisialMatkul}</span>
+                        <div className="dash-img-matkul">
+                          <img
+                            className="image-matkul"
+                            src={data.icon}
+                            alt={data.matkul}
+                          />
+                        </div>
                       </div>
 
                       <div className="desc-matkul">
@@ -208,16 +223,11 @@ function DashboardDosen(props) {
                     </div>
 
                     <div className="mb-0">
-                      <Button variant="primary" className="mb-2" size="sm">
-                        Meet
-                      </Button>
-                      <Button
-                        variant="danger"
-                        className="mx-lg-2 mb-2"
-                        size="sm"
-                      >
-                        Batal
-                      </Button>
+                      <Link to={"/DashboardDosen/read/" + data.id}>
+                        <Button variant="success" className="w-100 mb-2" size="sm">
+                          Detail
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </Col>
