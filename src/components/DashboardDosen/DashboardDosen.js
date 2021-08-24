@@ -12,6 +12,7 @@ import multimedia from "../../images/multimedia.svg";
 import website from "../../images/website.svg";
 import pemrogramanmobile from "../../images/pemrogramanmobile.svg";
 import DetailKelasMhs from './../DashboardMhs/DetailKelasMhs';
+import Calendar from "./Calendar";
 
 function DashboardDosen(props) {
   const dataInfo = [
@@ -184,54 +185,53 @@ function DashboardDosen(props) {
               ))}
             </Row>
 
-            <Row className="mb-3">
+            <Row className="mb-3 mt-4">
               <Col>
                 <h3>Reminder Pertemuan</h3>
               </Col>
             </Row>
 
-            <Row lg={3}>
-              {dataReminder.map((data, i) => (
-                <Col className="mb-4">
-                  <div className="dash-card-wrapper">
-                    <div className="initial-matkul-wrapper">
-                      <div className="initial-matkul">
-                        <div className="dash-img-matkul">
-                          <img
-                            className="image-matkul"
-                            src={data.icon}
-                            alt={data.matkul}
-                          />
+            <Row>
+              <Col md={6}>
+                <Row>
+                  {dataReminder.map((data, i) => (
+                    <Col md={6} className="mb-4">
+                      <div className="dash-card-wrapper">
+                        <div className="initial-matkul-wrapper">
+                          <div className="initial-matkul">
+                            <div className="dash-img-matkul">
+                              <img
+                                className="image-matkul"
+                                src={data.icon}
+                                alt={data.matkul}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="desc-matkul">
+                            <p className="mata-kuliah mb-0">{data.matkul}</p>
+                            <p className="pertemuan-kuliah mb-0">
+                              Pertemuan {data.pertemuan}
+                            </p>
+                            <p className="jadwal-kuliah mb-0">{data.jadwal}</p>
+                          </div>
+                        </div>
+
+                        <div className="mb-0">
+                          <Link to={"/DashboardDosen/read/" + data.id}>
+                            <Button variant="success" className="w-100 mb-2" size="sm">
+                              Detail
+                            </Button>
+                          </Link>
                         </div>
                       </div>
-
-                      <div className="desc-matkul">
-                        <p className="mata-kuliah mb-0">{data.matkul}</p>
-                        <p className="pertemuan-kuliah mb-0">
-                          Pertemuan {data.pertemuan}
-                        </p>
-                        <p className="jadwal-kuliah mb-0">{data.jadwal}</p>
-                        <p
-                          className={`${
-                            data.isDone ? "isDone" : "isNotDone"
-                          } mb-0`}
-                        >
-                          &bull;{" "}
-                          {data.isDone ? "Terlaksana" : "Belum Terlaksana"}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="mb-0">
-                      <Link to={"/DashboardDosen/read/" + data.id}>
-                        <Button variant="success" className="w-100 mb-2" size="sm">
-                          Detail
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </Col>
-              ))}
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+              <Col md={6}>
+                <Calendar/>
+              </Col>
             </Row>
           </div>
         )}
