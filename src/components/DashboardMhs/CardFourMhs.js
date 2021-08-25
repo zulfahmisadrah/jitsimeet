@@ -108,7 +108,7 @@ function CardFourMhs(props) {
   return (
     <div className="cardmhs-wrapper-four" id="kuliah-mhs">
       <Container className="py-5">
-        <h1 className="">Kuliah</h1>
+        <h3 className="">Kuliah</h3>
         <p
           className="text-primary d-flex justify-content-end"
           style={{ cursor: "pointer" }}

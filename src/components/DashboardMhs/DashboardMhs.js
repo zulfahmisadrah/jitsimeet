@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./DashboardMhs.css";
-
 import CardsMhs from "./CardsMhs";
 import CardFourMhs from "./CardFourMhs";
 import FooterMhs from "./FooterMhs";
@@ -25,28 +24,14 @@ const DashboardMhs = () => {
       <NavbarDashboardMhs scrolling={checkScrollOnTop} />
       <div className="background-image-dashboard-mhs">
         <h2>Selamat Datang</h2>
-        <p>Ulfah Rojiyyah</p>
+        <p>Ulfah</p>
       </div>
       <CardsMhs />
       <CardFourMhs />
       <CardThreeMhs />
       <FooterMhs />
     </div>
-    // <div className="dashboard-mhs-wrapper">
-    //   <NavbarDashboardMhs />
-    //   <div className="dashboardmhs-wrapper">
-    //     <div className="dashboardmhs">
-    //       <h2>Selamat Datang</h2>
-    //       <p>Ulfah Rojiyyah</p>
-    //     </div>
-    //   </div>
-    //   <div className="features-wrapper">
-    //     <CardsMhs />
-    //     <CardFourMhs />
-    //     <CardThreeMhs />
-    //     <FooterMhs />
-    //   </div>
-    // </div>
+  
   );
 };
 export default DashboardMhs;

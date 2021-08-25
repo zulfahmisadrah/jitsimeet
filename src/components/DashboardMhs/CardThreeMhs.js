@@ -39,7 +39,7 @@ function CardThreeMhs() {
   return (
     <div className="bg-white cardmhs-wrapper" id="kelas-mhs">
       <Container className="py-5 bg-white">
-        <h1 className="mb-5">Kelas</h1>
+        <h3 className="mb-5">Kelas</h3>
         <Row xs={1} md={2} lg={3} className="g-4">
           {dataKelasMhs.map((data, i) => (
             <CardFourItemMhs

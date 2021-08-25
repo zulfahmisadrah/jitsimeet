@@ -40,7 +40,7 @@ function CardsMhs(props) {
   return (
     <div className="py-5 bg-white cardmhs-wrapper">
       <Container>
-        <h1 className="mb-5">Reminder Pertemuan</h1>
+        <h3 className="mb-5">Reminder Pertemuan</h3>
         <Row xs={1} md={2} lg={3} className="g-4">
           {dataReminderMhs.map((data, i) => (
             <CardFourItemMhs
