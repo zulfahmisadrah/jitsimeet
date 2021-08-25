@@ -3,8 +3,6 @@ import "./DashboardMhs.css";
 import CardsMhs from "./CardsMhs";
 import CardFourMhs from "./CardFourMhs";
 import FooterMhs from "./FooterMhs";
-import CardThreeMhs from "./CardThreeMhs";
-import { Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
 import NavbarDashboardMhs from "../NavbarDashboardMhs";
 
 const DashboardMhs = () => {
@@ -28,7 +26,6 @@ const DashboardMhs = () => {
       </div>
       <CardsMhs />
       <CardFourMhs />
-      <CardThreeMhs />
       <FooterMhs />
     </div>
   

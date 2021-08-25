@@ -3,6 +3,10 @@
   background-color: transparent !important;
 } */
 
+.navbar-dark.bg-transparent .navbar-nav .nav-link {
+  color: #212529;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .navbar-dashboard-mhs-container {
     height: 100px;

@@ -1,60 +1,111 @@
 import React from "react";
 import "./CardsMhs.css";
-import CardItemMhs from "../DashboardMhs/CardItemMhs";
-import CardFourItemMhs from "./CardFourItemMhs";
-import { Container, Row } from "react-bootstrap";
-import cardMhs1 from "../../images/card1-mhs.svg";
-import cardMhs2 from "../../images/card2-mhs.svg";
-import cardMhs3 from "../../images/card3-mhs.svg";
-import cardMhs7 from "../../images/card7-mhs.svg";
-import cardMhs8 from "../../images/card8-mhs.svg";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import keamananinternet from "../../images/keamananinternet.svg";
+import multimedia from "../../images/multimedia.svg";
+import website from "../../images/website.svg";
+import pemrogramanmobile from "../../images/pemrogramanmobile.svg";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+
 
 function CardsMhs(props) {
   const dataReminderMhs = [
     {
-      src: cardMhs3,
-      text: "Pertemuan ke-2",
-      text2: "Selasa, 13 Maret, 10:30 WIB",
-      label: "Aljabar",
-      path: "/ListkuliahMhs",
+      icon: keamananinternet,
+      matkul: "Keamanan Jaringan",
+      pertemuan: 4,
+      jadwal: "Senin, 22 November 2021",
       isDone: false,
+      id: "32DD433"
     },
     {
-      src: cardMhs7,
-      text: "Pertemuan ke-4",
-      text2: "Rabu, 14 Maret, 12:30 WIB",
-      label: "Multimedia",
-      path: "/ListkuliahMhs",
+      icon: multimedia,
+      matkul: "Multimedia",
+      pertemuan: 5,
+      jadwal: "Selasa, 23 November 2021",
       isDone: false,
+      id: "32DD432"
     },
     {
-      src: cardMhs8,
-      text: "Pertemuan ke-1",
-      text2: "Senin, 12 Maret, 07:30 WIB",
-      label: "Keamanan Jaringan",
-      path: "/ListkuliahMhs",
+      icon: website,
+      matkul: "Pemrograman Website",
+      pertemuan: 4,
+      jadwal: "Rabu, 24 November 2021",
       isDone: false,
+      id: "32DD434"
     },
+    {
+      icon: pemrogramanmobile,
+      matkul: "Pemrograman Mobile",
+      pertemuan: 4,
+      jadwal: "Kamis, 25 November 2021",
+      isDone: false,
+      id: "32DD435"
+    },
+  ];
+
+  const markedDate = [
+    new Date(2021, 10, 22), 
+    new Date(2021, 10, 23),
+    new Date(2021, 10, 24),
+    new Date(2021, 10, 25)
   ];
 
   return (
     <div className="py-5 bg-white cardmhs-wrapper">
       <Container>
         <h3 className="mb-5">Reminder Pertemuan</h3>
-        <Row xs={1} md={2} lg={3} className="g-4">
-          {dataReminderMhs.map((data, i) => (
-            <CardFourItemMhs
-              key={i}
-              withBadge
-              detaiKuliah
-              src={data.src}
-              text={data.text}
-              text2={data.text2}
-              label={data.label}
-              path={data.path}
-            />
-          ))}
-        </Row>
+        <Row>
+              <Col md={8}>
+                <Row>
+                  {dataReminderMhs.map((data, i) => (
+                    <Col md={6} className="mb-4">
+                      <div className="dash-card-wrapper">
+                        <div className="initial-matkul-wrapper">
+                          <div className="initial-matkul">
+                            <div className="dash-img-matkul">
+                              <img
+                                className="image-matkul"
+                                src={data.icon}
+                                alt={data.matkul}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="desc-matkul">
+                            <p className="mata-kuliah mb-0">{data.matkul}</p>
+                            <p className="pertemuan-kuliah mb-0">
+                              Pertemuan {data.pertemuan}
+                            </p>
+                            <p className="jadwal-kuliah mb-0">{data.jadwal}</p>
+                          </div>
+                        </div>
+
+                        <div className="mb-0">
+                          <Link to={"/DashboardDosen/read/" + data.id}>
+                            <Button variant="success" className="w-100 mb-2" size="sm">
+                              Detail
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+              <Col md={4}>
+                <Calendar 
+                  value={new Date()} 
+                  tileClassName={({ date }) => {
+                    if(markedDate.find(x => x.getTime()===date.getTime()))
+                      return 'highlight'
+                    }
+                  }
+                />
+              </Col>
+            </Row>
       </Container>
     </div>
 

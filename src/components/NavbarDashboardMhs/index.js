@@ -37,7 +37,6 @@ export default function NavbarDashboardMhs(props) {
           <Nav className="d-flex align-items-center">
             <Nav.Link href="/DashboardMhs">Beranda</Nav.Link>
             <Nav.Link href="#kuliah-mhs">Kuliah</Nav.Link>
-            <Nav.Link href="#kelas-mhs">Kelas</Nav.Link>
             {props.withSearch && (
               <div
                 className={`d-flex align-items-center justify-content-center bg-dark`}

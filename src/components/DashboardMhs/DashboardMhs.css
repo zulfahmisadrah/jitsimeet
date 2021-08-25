@@ -41,7 +41,6 @@ div.nav-item.dropdown:hover {
   height: 50vh;
   background: url("../../images/background20.jpeg") center center/cover no-repeat;
   position: absolute;
-  filter:blur(3px);
   -webkit-filter: blur (3px) ;
   top: 0;
   left: 0;
@@ -53,9 +52,6 @@ div.nav-item.dropdown:hover {
   align-items: center;
 }
 
-.background-image-dashboard-mhs h2 {
-  color: rgb(250, 250, 250);
-}
 .background-image-dashboard-mhs p {
   color: rgb(0, 0, 0);
 }
