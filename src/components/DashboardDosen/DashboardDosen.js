@@ -11,8 +11,8 @@ import keamananinternet from "../../images/keamananinternet.svg";
 import multimedia from "../../images/multimedia.svg";
 import website from "../../images/website.svg";
 import pemrogramanmobile from "../../images/pemrogramanmobile.svg";
-import DetailKelasMhs from './../DashboardMhs/DetailKelasMhs';
-import Calendar from "./Calendar";
+import Calendar from 'react-calendar';
+
 
 function DashboardDosen(props) {
   const dataInfo = [
