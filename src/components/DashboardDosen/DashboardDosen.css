@@ -160,3 +160,16 @@
   color: rgb(192, 0, 0);
   margin-top: 4px;
 }
+
+.col h3 {
+  text-align: left;
+}
+
+.react-calendar__tile--active {
+  background: #198754 !important;
+}
+
+.highlight {
+  color: white;
+  background: #0d6efd !important;
+}

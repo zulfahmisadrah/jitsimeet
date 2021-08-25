@@ -12,7 +12,7 @@ import multimedia from "../../images/multimedia.svg";
 import website from "../../images/website.svg";
 import pemrogramanmobile from "../../images/pemrogramanmobile.svg";
 import Calendar from 'react-calendar';
-
+import 'react-calendar/dist/Calendar.css';
 
 function DashboardDosen(props) {
   const dataInfo = [
@@ -31,7 +31,7 @@ function DashboardDosen(props) {
       icon: keamananinternet,
       matkul: "Keamanan Jaringan",
       pertemuan: 4,
-      jadwal: "Selasa, 24 November 2021",
+      jadwal: "Senin, 22 November 2021",
       isDone: false,
       id: "32DD433"
     },
@@ -39,7 +39,7 @@ function DashboardDosen(props) {
       icon: multimedia,
       matkul: "Multimedia",
       pertemuan: 5,
-      jadwal: "Rabu, 23 November 2021",
+      jadwal: "Selasa, 23 November 2021",
       isDone: false,
       id: "32DD432"
     },
@@ -47,7 +47,7 @@ function DashboardDosen(props) {
       icon: website,
       matkul: "Pemrograman Website",
       pertemuan: 4,
-      jadwal: "Kamis, 25 November 2021",
+      jadwal: "Rabu, 24 November 2021",
       isDone: false,
       id: "32DD434"
     },
@@ -55,7 +55,7 @@ function DashboardDosen(props) {
       icon: pemrogramanmobile,
       matkul: "Pemrograman Mobile",
       pertemuan: 4,
-      jadwal: "Senin, 21 November 2021",
+      jadwal: "Kamis, 25 November 2021",
       isDone: false,
       id: "32DD435"
     },
@@ -63,6 +63,13 @@ function DashboardDosen(props) {
 
   const [sidebarIsOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
+  const markedDate = [
+    new Date(2021, 10, 22), 
+    new Date(2021, 10, 23),
+    new Date(2021, 10, 24),
+    new Date(2021, 10, 25)
+  ];
+
 
   console.log(props);
   return (
@@ -192,7 +199,7 @@ function DashboardDosen(props) {
             </Row>
 
             <Row>
-              <Col md={6}>
+              <Col md={8}>
                 <Row>
                   {dataReminder.map((data, i) => (
                     <Col md={6} className="mb-4">
@@ -229,8 +236,15 @@ function DashboardDosen(props) {
                   ))}
                 </Row>
               </Col>
-              <Col md={6}>
-                <Calendar/>
+              <Col md={4}>
+                <Calendar 
+                  value={new Date()} 
+                  tileClassName={({ date }) => {
+                    if(markedDate.find(x => x.getTime()===date.getTime()))
+                      return 'highlight'
+                    }
+                  }
+                />
               </Col>
             </Row>
           </div>
