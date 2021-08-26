@@ -14,11 +14,11 @@ function CardsMhs(props) {
   const dataReminderMhs = [
     {
       icon: keamananinternet,
-      matkul: "Keamanan Jaringan",
+      matkul: "Keamanan Internet",
       pertemuan: 4,
       jadwal: "Senin, 22 November 2021",
       isDone: false,
-      id: "32DD433"
+      id: "1DE2231"
     },
     {
       icon: multimedia,
@@ -81,14 +81,6 @@ function CardsMhs(props) {
                             </p>
                             <p className="jadwal-kuliah mb-0">{data.jadwal}</p>
                           </div>
-                        </div>
-
-                        <div className="mb-0">
-                          <Link to={"/DashboardDosen/read/" + data.id}>
-                            <Button variant="success" className="w-100 mb-2" size="sm">
-                              Detail
-                            </Button>
-                          </Link>
                         </div>
                       </div>
                     </Col>

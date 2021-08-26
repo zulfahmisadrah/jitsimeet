@@ -2,100 +2,126 @@ import React from "react";
 import { Badge, Card, Col, Container, Row } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import CardFourItemMhs from "../DashboardMhs/CardFourItemMhs";
-import image1 from "../../images/box1.svg";
-import image2 from "../../images/box2.svg";
-import image3 from "../../images/box3.svg";
+import aljabarlinear from "../../images/aljabarlinear.svg";
+import multimedia from "../../images/multimedia_mhs.svg";
+import keamananjaringan from "../../images/keamananjaringan.svg";
+import aljabarlinear1 from "../../images/aljabarlinear1.jpeg";
+import aljabarlinear2 from "../../images/aljabarlinear2.jpeg";
+import aljabarlinear3 from "../../images/aljabarlinear3.jpeg";
+import aljabarlinear4 from "../../images/aljabarlinear4.jpeg";
+import multimedia1 from "../../images/multimedia1.jpeg";
+import multimedia2 from "../../images/multimedia2.jpeg";
+import multimedia3 from "../../images/multimedia3.jpeg";
+import multimedia4 from "../../images/multimedia4.jpeg";
+import kemananinternet1 from "../../images/kemananinternet1.jpeg";
+import kemananinternet2 from "../../images/kemananinternet2.jpeg";
+import kemananinternet3 from "../../images/kemananinternet3.jpeg";
+import kemananinternet4 from "../../images/kemananinternet4.jpeg";
 
 import cardMhs3 from "../../images/card3-mhs.svg";
 
 function CardFourMhs(props) {
   const data = [
     {
-      src: image1,
-      text: "Aljabar",
+      src: aljabarlinear,
+      text: "Aljabar Linear",
       path: "/DetailKelasMhs",
       pertemuan: [
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: aljabarlinear1,
           text: "Pertemuan ke-1",
           text2: "Selasa, 13 Maret, 10:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: aljabarlinear2,
           text: "Pertemuan ke-2",
           text2: "Rabu, 14 Maret, 12:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: aljabarlinear3,
           text: "Pertemuan ke-3",
           text2: "Senin, 12 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: aljabarlinear4,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 12 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
       ],
     },
     {
-      src: image2,
+      src: multimedia,
       text: "Multimedia",
       path: "/DetailKelasMhs",
       pertemuan: [
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: multimedia1,
           text: "Pertemuan ke-1",
           text2: "Selasa, 13 Maret, 10:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: multimedia2,
           text: "Pertemuan ke-2",
           text2: "Rabu, 14 Maret, 12:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: multimedia3,
           text: "Pertemuan ke-3",
           text2: "Senin, 12 Maret, 07:30 WIB",
+          path: "/ListkuliahMhs",
+          isDone: false,
+        },
+        {
+          src: multimedia4,
+          text: "Pertemuan ke-4",
+          text2: "Senin, 12 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
       ],
     },
     {
-      src: image3,
-      text: "Keamanan Jaringan",
+      src: keamananjaringan,
+      text: "Keamanan Internet",
       path: "/DetailKelasMhs",
       pertemuan: [
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: kemananinternet1,
           text: "Pertemuan ke-1",
           text2: "Selasa, 13 Maret, 10:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: kemananinternet2,
           text: "Pertemuan ke-2",
           text2: "Rabu, 14 Maret, 12:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
-          src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
+          src: kemananinternet3,
           text: "Pertemuan ke-3",
           text2: "Senin, 12 Maret, 07:30 WIB",
+          path: "/ListkuliahMhs",
+          isDone: false,
+        },
+        {
+          src: kemananinternet4,
+          text: "Pertemuan ke-4",
+          text2: "Senin, 12 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },

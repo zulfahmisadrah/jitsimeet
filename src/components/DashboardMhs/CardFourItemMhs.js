@@ -10,7 +10,7 @@ function CardFourItemMhs(props) {
   return (
     <Col>
       <Card
-        style={{ height: 400 }}
+        style={{ height: 400, marginBottom: 24 }}
         className={`${
           props.noHover ? "card-wrapper with-shadow" : "card-wrapper"
         }`}

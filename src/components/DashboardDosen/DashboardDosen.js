@@ -29,11 +29,11 @@ function DashboardDosen(props) {
   const dataReminder = [
     {
       icon: keamananinternet,
-      matkul: "Keamanan Jaringan",
+      matkul: "Keamanan Internet",
       pertemuan: 4,
       jadwal: "Senin, 22 November 2021",
       isDone: false,
-      id: "32DD433"
+      id: "1DE2231"
     },
     {
       icon: multimedia,

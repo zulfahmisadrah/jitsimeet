@@ -24,8 +24,12 @@ const DashboardMhs = () => {
         <h2>Selamat Datang</h2>
         <p>Ulfah</p>
       </div>
-      <CardsMhs />
-      <CardFourMhs />
+      <section>
+        <CardsMhs />
+      </section>
+      <section>
+        <CardFourMhs />
+      </section>
       <FooterMhs />
     </div>
   
