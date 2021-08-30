@@ -261,7 +261,7 @@ export default function ListKelasMhs(props) {
     setFilteredData(data)
   }, [])
 
-  const totalPages = Math.ceil(filteredData.length/10)
+  const totalPages = Math.ceil(filteredData.length/6)
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
     items.push(
@@ -271,7 +271,7 @@ export default function ListKelasMhs(props) {
     );
   }
 
-  const itemsPerPage = 10
+  const itemsPerPage = 6
   const offset = (active-1)*itemsPerPage
   const limit = offset+itemsPerPage
 

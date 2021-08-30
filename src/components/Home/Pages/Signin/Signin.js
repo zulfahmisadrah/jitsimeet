@@ -75,7 +75,7 @@ const Signin = () => {
           </div>
           <div
             className="d-flex align-items-center justify-content-between"
-            style={{ marginLeft: "10%", marginTop: 15 }}
+            style={{ marginLeft: "12%", marginTop: 15 }}
           >
             <Form.Check
               type="checkbox"
@@ -83,13 +83,11 @@ const Signin = () => {
               label="Remember Me"
               // className="block"
               style={{ fontSize: 14 }}
-            />
-
+            />    
             <button
               className="mb-0 text-secondary"
               style={{ background: "transparent",fontSize: 14, marginLeft: 20 }}
             >
-              Forgot Password
             </button>
           </div>
           <button

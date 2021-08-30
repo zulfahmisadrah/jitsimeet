@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./DashboardMhs.css";
 import CardsMhs from "./CardsMhs";
 import CardFourMhs from "./CardFourMhs";
-import FooterMhs from "./FooterMhs";
 import NavbarDashboardMhs from "../NavbarDashboardMhs";
 
 const DashboardMhs = () => {
@@ -30,7 +29,6 @@ const DashboardMhs = () => {
       <section>
         <CardFourMhs />
       </section>
-      <FooterMhs />
     </div>
   
   );
