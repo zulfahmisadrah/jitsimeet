@@ -49,13 +49,13 @@ const Sidebar = ({ isOpen, toggle }) => {
             className="mb-0 text-white text-center"
             style={{ padding: "20px 20px 0 20px" }}
           >
-            Jhon Doe
+            Nama Dosen
           </h5>
           <p
             className="text-white text-center"
             style={{ fontSize: 14, paddingBottom: 20 }}
           >
-            UI/UX Desainer
+            NIP
           </p>
       </div>
       <div className="side-menu">

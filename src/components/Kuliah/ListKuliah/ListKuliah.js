@@ -178,7 +178,7 @@ const ListKuliah = (props) => {
                     <td>{user.position}</td>
                     <td>
                       <Link to={"read/" + user.id}>
-                        <Button className="m-2" variant="primary">
+                        <Button className="m-2" variant="success">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"

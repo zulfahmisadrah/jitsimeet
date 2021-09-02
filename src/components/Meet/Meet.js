@@ -115,17 +115,17 @@ class Meet extends Component {
             <header className="nav-bar">
                 <p className="item-left heading">Jitsi React</p>
             </header>
-            <div id="jitsi-iframe"></div>
+            {/* <div id="jitsi-iframe"></div>
             <div class="item-center">
                 <span>Custom Controls</span>
-            </div>
-            <div class="item-center">
+            </div> */}
+            {/* <div class="item-center">
                 <span>&nbsp;&nbsp;</span>
                 <i onClick={ () => this.executeCommand('toggleAudio') } className={`fas fa-2x grey-color ${isAudioMuted ? 'fa-microphone-slash' : 'fa-microphone'}`} aria-hidden="true" title="Mute / Unmute"></i>
                 <i onClick={ () => this.executeCommand('hangup') } className="fas fa-phone-slash fa-2x red-color" aria-hidden="true" title="Leave"></i>
                 <i onClick={ () => this.executeCommand('toggleVideo') } className={`fas fa-2x grey-color ${isVideoMuted ? 'fa-video-slash' : 'fa-video'}`} aria-hidden="true" title="Start / Stop camera"></i>
                 <i onClick={ () => this.executeCommand('toggleShareScreen') } className="fas fa-film fa-2x grey-color" aria-hidden="true" title="Share your screen"></i>
-            </div>
+            </div> */}
 
             </>
         );
