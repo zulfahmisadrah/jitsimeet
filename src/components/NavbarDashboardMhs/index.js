@@ -20,8 +20,8 @@ export default function NavbarDashboardMhs(props) {
       collapseOnSelect
       expand="lg"
       bg={`${props.isDark ? "dark" : props.scrolling}`}
-      variant="dark"
-      fixed={`${props.scrolling === "dark" ? "top" : ""}`}
+      variant="light"
+      fixed={`${props.scrolling === "light" ? "top" : ""}`}
       className="navbar-dashboard-mhs-container"
     >
       <Container>

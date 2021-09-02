@@ -49,6 +49,11 @@ nav {
   transition: 0.6s ease-in-out;
   padding: 16px 16px !important;
 }
+nav .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 nav.active {
   box-shadow: 5px 10px 30px rgba(0, 247, 255, 0.157);
   background-color: #ffffff;

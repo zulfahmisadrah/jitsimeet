@@ -46,7 +46,7 @@ function DetailKelasMhs(props) {
 
   return (
     <div className="daftar-kelas-wrapper" style={{ position: "relative" }}>
-      <NavbarDashboardMhs isDark />
+      <NavbarDashboardMhs />
       <Container>
         <Row className="my-5 d-flex align-items-center">
           <Col>

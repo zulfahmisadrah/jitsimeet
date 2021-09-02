@@ -31,7 +31,7 @@ function DashboardDosen(props) {
       icon: keamananinternet,
       matkul: "Keamanan Internet",
       pertemuan: 4,
-      jadwal: "Senin, 22 November 2021",
+      jadwal: "Senin, 20 September 2021",
       isDone: false,
       id: "1DE2231"
     },
@@ -39,7 +39,7 @@ function DashboardDosen(props) {
       icon: multimedia,
       matkul: "Multimedia",
       pertemuan: 5,
-      jadwal: "Selasa, 23 November 2021",
+      jadwal: "Selasa, 21 September 2021",
       isDone: false,
       id: "32DD432"
     },
@@ -47,7 +47,7 @@ function DashboardDosen(props) {
       icon: website,
       matkul: "Pemrograman Website",
       pertemuan: 4,
-      jadwal: "Rabu, 24 November 2021",
+      jadwal: "Rabu, 22 September 2021",
       isDone: false,
       id: "32DD434"
     },
@@ -55,7 +55,7 @@ function DashboardDosen(props) {
       icon: pemrogramanmobile,
       matkul: "Pemrograman Mobile",
       pertemuan: 4,
-      jadwal: "Kamis, 25 November 2021",
+      jadwal: "Kamis, 23 September 2021",
       isDone: false,
       id: "32DD435"
     },
@@ -64,10 +64,10 @@ function DashboardDosen(props) {
   const [sidebarIsOpen, setSidebarOpen] = useState(true);
   const toggleSidebar = () => setSidebarOpen(!sidebarIsOpen);
   const markedDate = [
-    new Date(2021, 10, 22), 
-    new Date(2021, 10, 23),
-    new Date(2021, 10, 24),
-    new Date(2021, 10, 25)
+    new Date(2021, 8, 20), 
+    new Date(2021, 8, 21),
+    new Date(2021, 8, 22),
+    new Date(2021, 8, 23)
   ];
 
 

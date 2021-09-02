@@ -16,35 +16,37 @@ function Navbar() {
 
   return (
     <nav className={`${nav ? "nav active" : "nav"} navbar-home`}>
-      <a href="#" className="logo">
-        {/* <img src={logo} alt="" /> */}
-      </a>
-      <input type="checkbox" className="menu-btn" id="menu-btn" />
-      <label className="menu-icon" for="menu-btn">
-        <span className="nav-icon"></span>
-      </label>
-      <ul className="menu">
-        <li>
-          <a href="#home" style={{ textDecoration: "none" }}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#features" style={{ textDecoration: "none" }}>
-            Features
-          </a>
-        </li>
-        <li>
-          <a href="#contacts" style={{ textDecoration: "none" }}>
-            Contact
-          </a>
-        </li>
-        <li>
-          <Link to="/Signup" style={{ textDecoration: "none" }}>
-            Sign Up
-          </Link>
-        </li>
-      </ul>
+      <div class="container">
+        <a href="#" className="logo">
+          {/* <img src={logo} alt="" /> */}
+        </a>
+        <input type="checkbox" className="menu-btn" id="menu-btn" />
+        <label className="menu-icon" for="menu-btn">
+          <span className="nav-icon"></span>
+        </label>
+        <ul className="menu">
+          <li>
+            <a href="#home" style={{ textDecoration: "none" }}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#features" style={{ textDecoration: "none" }}>
+              Features
+            </a>
+          </li>
+          <li>
+            <a href="#contacts" style={{ textDecoration: "none" }}>
+              Contact
+            </a>
+          </li>
+          <li>
+            <Link to="/Signup" style={{ textDecoration: "none" }}>
+              Sign Up
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

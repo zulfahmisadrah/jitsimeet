@@ -284,7 +284,7 @@ export default function ListKelasMhs(props) {
 
   return (
     <div className="">
-      <NavbarDashboardMhs isDark />
+      <NavbarDashboardMhs />
       <Container className="daftar-kelas-wrapper">
         <Row className="my-5 d-flex align-items-center">
           <Col>

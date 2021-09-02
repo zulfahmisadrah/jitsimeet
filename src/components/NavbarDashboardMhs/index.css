@@ -7,6 +7,11 @@
   color: #212529;
 }
 
+.navbar-dashboard-mhs-container.bg-light {
+  box-shadow: 5px 10px 30px rgb(0 247 255 / 16%);
+  background-color: #ffffff;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .navbar-dashboard-mhs-container {
     height: 100px;

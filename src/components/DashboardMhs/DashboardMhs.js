@@ -9,7 +9,7 @@ const DashboardMhs = () => {
 
   const changeBackground = () => {
     if (window.scrollY >= 60) {
-      setCheckScrollOnTop("dark");
+      setCheckScrollOnTop("light");
     } else {
       setCheckScrollOnTop("transparent");
     }
