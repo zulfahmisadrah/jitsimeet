@@ -11,7 +11,7 @@ function Header() {
         <Navbar/>
         <div className="main"></div>
         <div className='main-hero'>
-                <h1 className="hero-title"><span>Hai, selamat pagi terang, gelap telah hilang</span></h1>
+                <h1 className="hero-title"><span>Hai, selamat Datang</span></h1>
                 <p className='hero-sub-tilte'>Sistem ini memudahkan Anda dalam melakukan pembelajaran online melalui Video Conference.</p>
                 <a className='cv-btn' href="#features" style={{ textDecoration: "none" }}>
                     Mulai
