@@ -11,6 +11,7 @@ import {
 import Logo from "../../images/logo.png";
 import "./index.css";
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export default function NavbarDashboardMhs(props) {
   const [showSearch, setShowSearch] = useState(false);
@@ -37,7 +38,7 @@ export default function NavbarDashboardMhs(props) {
           <Nav className="me-auto" />
           <Nav className="d-flex align-items-center">
             <Nav.Link><Link to="/DashboardMhs">Beranda</Link></Nav.Link>
-            <Nav.Link><Link to="/DashboardMhs#kuliah-mhs">Kuliah</Link></Nav.Link>
+            <Nav.Link><HashLink to="/DashboardMhs/#kuliah-mhs">Kuliah</HashLink></Nav.Link>
             {props.withSearch && (
               <div
                 className={`d-flex align-items-center justify-content-center bg-dark`}
@@ -74,7 +75,7 @@ export default function NavbarDashboardMhs(props) {
               title={localStorage.getItem("username")}
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item href="/">Keluar</NavDropdown.Item>
+              <NavDropdown.Item><Link to="/">Keluar</Link></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
