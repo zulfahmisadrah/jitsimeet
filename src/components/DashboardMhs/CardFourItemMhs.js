@@ -57,7 +57,7 @@ function CardFourItemMhs(props) {
           </Card.Text>
           {props.detaiKuliah ? (
             <div className="">
-              <Button variant="primary">
+              <Button variant="primary" className={props.terlaksana ? "invisible" : ""}>
                 <Link to="/Meet/10">Meet</Link>
               </Button>
 
