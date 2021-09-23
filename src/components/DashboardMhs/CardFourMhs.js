@@ -32,7 +32,7 @@ function CardFourMhs(props) {
           text: "Pertemuan ke-1",
           text2: "Selasa, 13 Maret, 10:30 WIB",
           path: "/ListkuliahMhs",
-          isDone: false,
+          isDone: true,
         },
         {
           src: aljabarlinear2,
