@@ -65,7 +65,7 @@ class Meet extends Component {
 
     handleVideoConferenceLeft = () => {
         console.log("handleVideoConferenceLeft");
-        return this.props.history.push('/list-kelas-mhs');
+        return this.props.history.goBack();
     }
 
     handleMuteStatus = (audio) => {
