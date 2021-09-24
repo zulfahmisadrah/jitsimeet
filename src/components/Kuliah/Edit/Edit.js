@@ -1,40 +1,38 @@
 import React from "react";
-import { useContext } from "react";
-import { useParams } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { KuliahContext } from "../KuliahContext/KuliahContext";
 import "./Edit.css";
 import { useState } from "react";
 
 const Edit = (props) => {
-  const [users, setUser] = useContext(KuliahContext);
-  const { id } = useParams();
-  const user = users.filter((user) => user.id == id);
+  const matkul =  props.data;
 
-  const [name, setName] = useState(users[0].name);
-  const [position, setPosition] = useState(users[0].position);
-  const [idMatakuliah, setId] = useState(users[0].id);
+  const [name, setName] = useState(matkul.name);
+  const [position, setPosition] = useState(matkul.position);
+  const [idMatakuliah, setId] = useState(matkul.id);
 
   const editName = (e) => {
     setName(e.target.value);
     const edited_name = name;
-    users[0].name = edited_name;
+    matkul.name = edited_name;
   };
 
   const editId = (e) => {
-    setName(e.target.value);
+    setId(e.target.value);
     const edited_id = idMatakuliah;
-    users[0].id = edited_id;
+    matkul.id = edited_id;
   };
 
   const editPosition = (e) => {
-    users[0].position = e.target.value;
+    setPosition(e.target.value);
+    const edited_position = position;
+    matkul.position = edited_position;
   };
 
   const editUser = (e) => {
     e.preventDefault();
-    setUser([...users]);
+    matkul.id = idMatakuliah;
+    matkul.name = name;
+    matkul.position = position;
   };
 
   return (
@@ -45,9 +43,9 @@ const Edit = (props) => {
           <Form.Control
             type="text"
             name="id"
-            value={id}
+            value={idMatakuliah}
             onChange={editId}
-            placeholder={users[0].id}
+            placeholder={matkul.id}
           />
         </Form.Group>
 
@@ -58,7 +56,7 @@ const Edit = (props) => {
             name="name"
             value={name}
             onChange={editName}
-            placeholder={users[0].name}
+            placeholder={matkul.name}
           />
         </Form.Group>
 
@@ -67,9 +65,9 @@ const Edit = (props) => {
           <Form.Control
             type="text"
             name="position"
-            // value={position}
+            value={position}
             onChange={editPosition}
-            placeholder={users[0].position}
+            placeholder={matkul.position}
           />
         </Form.Group>
 
