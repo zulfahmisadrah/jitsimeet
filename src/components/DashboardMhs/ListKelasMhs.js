@@ -57,14 +57,14 @@ export default function ListKelasMhs(props) {
         {
           src: aljabarlinear3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: aljabarlinear4,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -92,14 +92,14 @@ export default function ListKelasMhs(props) {
         {
           src: multimedia3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: multimedia4,
           text: "Pertemuan ke-4",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -127,14 +127,14 @@ export default function ListKelasMhs(props) {
         {
           src: kemananinternet3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: kemananinternet4,
           text: "Pertemuan ke-4",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -162,7 +162,7 @@ export default function ListKelasMhs(props) {
         {
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -190,7 +190,7 @@ export default function ListKelasMhs(props) {
         {
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -218,7 +218,7 @@ export default function ListKelasMhs(props) {
         {
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -246,7 +246,7 @@ export default function ListKelasMhs(props) {
         {
           src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg",
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
