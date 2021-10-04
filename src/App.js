@@ -8,7 +8,6 @@ import Signup from "./components/Home/Pages/Signup/Signup";
 import DashboardDosen from "./components/DashboardDosen/DashboardDosen";
 import ListKuliah from "./components/Kuliah/ListKuliah/ListKuliah";
 import Read from "./components/Kuliah/Read/Read";
-import NotFound from "./components/Kuliah/NotFound/NotFound";
 import Create from "./components/Kuliah/Create/Create";
 import { UserProvider } from "./components/Kuliah/KuliahContext/KuliahContext";
 import Delete from "./components/Kuliah/Delete/Delete";
@@ -57,7 +56,6 @@ function App() {
                 />
                 <Route path="/DetailKelasMhs" component={DetailKelasMhs} />
                 <Route path="/Meet/:id" component={Meet} />
-                <Route path="*" component={NotFound} />
               </Switch>
 
             {/* </KuliahMhsProvider> */}

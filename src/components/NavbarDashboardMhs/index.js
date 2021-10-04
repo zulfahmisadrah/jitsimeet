@@ -8,7 +8,7 @@ import {
   Navbar,
   NavDropdown,
 } from "react-bootstrap";
-import Logo from "../../images/logo.png";
+
 import "./index.css";
 
 export default function NavbarDashboardMhs(props) {
