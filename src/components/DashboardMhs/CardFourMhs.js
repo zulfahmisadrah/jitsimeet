@@ -32,7 +32,7 @@ function CardFourMhs(props) {
           text: "Pertemuan ke-1",
           text2: "Selasa, 13 Maret, 10:30 WIB",
           path: "/ListkuliahMhs",
-          isDone: false,
+          isDone: true,
         },
         {
           src: aljabarlinear2,
@@ -44,14 +44,14 @@ function CardFourMhs(props) {
         {
           src: aljabarlinear3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: aljabarlinear4,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -79,14 +79,14 @@ function CardFourMhs(props) {
         {
           src: multimedia3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: multimedia4,
           text: "Pertemuan ke-4",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -114,14 +114,14 @@ function CardFourMhs(props) {
         {
           src: kemananinternet3,
           text: "Pertemuan ke-3",
-          text2: "Senin, 12 Maret, 07:30 WIB",
+          text2: "Senin, 20 Maret, 07:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
         {
           src: kemananinternet4,
           text: "Pertemuan ke-4",
-          text2: "Senin, 12 Maret, 09:30 WIB",
+          text2: "Senin, 30 Maret, 09:30 WIB",
           path: "/ListkuliahMhs",
           isDone: false,
         },
@@ -138,7 +138,10 @@ function CardFourMhs(props) {
         <p
           className="text-primary d-flex justify-content-end"
           style={{ cursor: "pointer" }}
-          onClick={() => history.push("/list-kelas-mhs")}
+          onClick={() => {
+            window.scrollTo(0, 0)
+            history.push("/list-kelas-mhs")
+          }}
         >
           <span>Selengkapnya</span> &nbsp;
           <svg

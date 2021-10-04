@@ -62,7 +62,7 @@ nav ul {
   display: flex;
 }
 .active {
-  background-color: #00b7ff;
+  background-color: #125D98;
   color: #ffffff;
   box-shadow: 5px 10px 30px rgba(189, 198, 64, 0.411);
   transition: all ease 0.2s;
@@ -83,7 +83,7 @@ nav ul li a {
   transition: 0.2s ease-in-out;
 }
 nav ul li a:hover {
-  background-color: #00b7ff;
+  background-color: #125D98;
   color: #ffffff;
   box-shadow: 5px 10px 30px rgba(2, 238, 255, 0.336);
   transition: all ease 0.2s;

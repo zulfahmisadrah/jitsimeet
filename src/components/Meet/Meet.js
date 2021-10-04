@@ -21,7 +21,7 @@ class Meet extends Component {
         const options = {
             roomName: this.state.room,
             width: '100%',
-            height: 500,
+            height: '100%',
             configOverwrite: { prejoinPageEnabled: false },
             interfaceConfigOverwrite: {
                 // overwrite interface properties
@@ -65,7 +65,7 @@ class Meet extends Component {
 
     handleVideoConferenceLeft = () => {
         console.log("handleVideoConferenceLeft");
-        return this.props.history.push('/thank-you');
+        return this.props.history.goBack();
     }
 
     handleMuteStatus = (audio) => {
@@ -112,11 +112,8 @@ class Meet extends Component {
         const { isAudioMuted, isVideoMuted } = this.state;
         return (
             <>
-            <header className="nav-bar">
-                <p className="item-left heading">Jitsi React</p>
-            </header>
-            {/* <div id="jitsi-iframe"></div>
-            <div class="item-center">
+            <div id="jitsi-iframe" style={{height: "100vh"}}></div>
+            {/* <div class="item-center">
                 <span>Custom Controls</span>
             </div> */}
             {/* <div class="item-center">

@@ -22,6 +22,7 @@ const ListKuliah = (props) => {
   const [active, setActive] = useState(1);
 
   const [show, setShow] = useState(false);
+  const [selectedData, setSelectedData] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
 
@@ -32,7 +33,10 @@ const ListKuliah = (props) => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const handleShowEdit = () => setShowEdit(true);
+  const handleShowEdit = (data) => {
+    setSelectedData(data)
+    setShowEdit(true);
+  }
   const handleCloseEdit = () => setShowEdit(false);
   const handleCloseDelete = () => setShowDelete(true);
 
@@ -43,7 +47,8 @@ const ListKuliah = (props) => {
     setShowDelete(false);
   };
 
-  const totalPages = Math.ceil(filteredData.length/5)
+  const itemsPerPage = 8
+  const totalPages = Math.ceil(filteredData.length/itemsPerPage)
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
     items.push(
@@ -53,7 +58,6 @@ const ListKuliah = (props) => {
     );
   }
 
-  const itemsPerPage = 5
   const offset = (active-1)*itemsPerPage
   const limit = offset+itemsPerPage
 
@@ -206,7 +210,7 @@ const ListKuliah = (props) => {
                       {/* <Link to={"/edit/"+user.id}> */}
                       <Button
                         className="m-2" 
-                        onClick={handleShowEdit}
+                        onClick={() => handleShowEdit(user)}
                         variant="warning"
                       >
                         <svg
@@ -287,7 +291,7 @@ const ListKuliah = (props) => {
           <Modal.Title>Edit Mata Kuliah</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Edit closeModal={handleCloseEdit}  onHide={handleCloseEdit}/>
+          <Edit closeModal={handleCloseEdit} data={selectedData} onHide={handleCloseEdit}/>
         </Modal.Body>
       </Modal>
     </div>

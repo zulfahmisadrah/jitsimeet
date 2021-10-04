@@ -29,7 +29,7 @@ function CardThreeMhs() {
     {
       src: cardMhs6,
       text: "Pertemuan ke-1",
-      text2: "Senin, 12 Maret, 07:30 WIB",
+      text2: "Senin, 20 Maret, 07:30 WIB",
       label: "Keamanan Jaringan",
       path: "/ListkuliahMhs",
       isDone: false,

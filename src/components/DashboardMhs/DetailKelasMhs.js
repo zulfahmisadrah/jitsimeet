@@ -51,7 +51,7 @@ function DetailKelasMhs(props) {
         <Row className="my-5 d-flex align-items-center">
           <Col>
             <h1 className="" style={{ textAlign: "left" }}>
-              Kelas&nbsp;{state.dataKuliah.text}
+              {state.dataKuliah.text}
             </h1>
           </Col>
           <Col lg={4}>
