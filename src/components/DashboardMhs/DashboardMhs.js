@@ -19,7 +19,7 @@ const DashboardMhs = () => {
   return (
     <div className="dashboard-mhs-wrapper">
       <NavbarDashboardMhs scrolling={checkScrollOnTop} />
-      <div className="background-image-dashboard-mhs">
+      <div className="background-image-dashboard-mhs" id="beranda">
         <h2>Selamat Datang</h2>
         <p>Ulfah</p>
       </div>
