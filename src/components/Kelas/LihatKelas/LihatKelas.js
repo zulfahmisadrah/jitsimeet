@@ -307,7 +307,7 @@ const LihatKelas = (props) => {
             <Tambah
               dataUser={listKelas}
               newValue={(value) => {
-                setListKelas([...listKelas, value]);
+                setFilteredData([...listKelas, value]);
               }}
               onHide={handleClose}
             />
