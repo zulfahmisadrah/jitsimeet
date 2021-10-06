@@ -42,10 +42,9 @@ const LihatKelas = (props) => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const handleShowEdit = (id) => {
+  const handleShowEdit = (data) => {
+    setSelectKelas(data);
     setShowEdit(true);
-    const kelasSelect = listKelas.filter((data) => data.id === id);
-    setSelectKelas(kelasSelect);
   };
 
   const handleCloseEdit = () => setShowEdit(false);
@@ -230,7 +229,7 @@ const LihatKelas = (props) => {
                       </Link>
 
                       <Button
-                        onClick={() => handleShowEdit(kelas.id)}
+                        onClick={() => handleShowEdit(kelas)}
                         className="mb-0 m-2"
                         variant="warning"
                       >
@@ -320,7 +319,7 @@ const LihatKelas = (props) => {
           </Modal.Header>
           <Modal.Body>
             <EditDetailMatkul
-              dataUser={selectKelas}
+              data={selectKelas}
               isEdit={true}
               onHide={() => handleCloseEdit()}
             />

@@ -4,34 +4,37 @@ import { Button, Form } from "react-bootstrap";
 import { KelasContext } from "../KelasContext/KelasContext";
 
 const EditDetailMatkul = (props) => {
-  const [id, setId] = useState(props.dataUser[0].id);
-  const [name, setName] = useState(props.dataUser[0].name);
-  const [position, setPosition] = useState(props.dataUser[0].position);
+  const pertemuan = props.data;
 
-  // const [id, setId] = useState("");
-  // const [name, setName] = useState("");
-  // const [position, setPosition] = useState("");
+  const [id, setId] = useState(pertemuan.id);
+  const [name, setName] = useState(pertemuan.name);
+  const [position, setPosition] = useState(pertemuan.position);
 
   const [kelass, setKelas] = useContext(KelasContext);
 
   const updateId = (e) => {
     setId(e.target.value);
-    console.log(id);
+    const edited_id = id;
+    pertemuan.id = edited_id;
   };
 
   const updateName = (e) => {
     setName(e.target.value);
+    const edited_name = name;
+    pertemuan.name = edited_name;
   };
 
   const updatePosition = (e) => {
     setPosition(e.target.value);
+    const edited_position = position;
+    pertemuan.position = edited_position;
   };
 
   const addKelas = (e) => {
     e.preventDefault();
-    props.dataUser[0].id = id;
-    props.dataUser[0].name = name;
-    props.dataUser[0].position = position;
+    pertemuan.id = id;
+    pertemuan.name = name;
+    pertemuan.position = position;
 
     return props.onHide();
   };
