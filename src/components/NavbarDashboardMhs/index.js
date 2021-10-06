@@ -9,9 +9,6 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
-import "./index.css";
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 export default function NavbarDashboardMhs(props) {
   const [showSearch, setShowSearch] = useState(false);
@@ -27,7 +24,7 @@ export default function NavbarDashboardMhs(props) {
       className="navbar-dashboard-mhs-container"
     >
       <Container>
-        <Navbar.Brand><Link to="/DashboardMhs"></Link>
+        <Navbar.Brand href="/DashboardMhs">
           {/* <img src={Logo} alt="" /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -37,8 +34,8 @@ export default function NavbarDashboardMhs(props) {
         >
           <Nav className="me-auto" />
           <Nav className="d-flex align-items-center">
-            <Nav.Link><Link to="/DashboardMhs">Beranda</Link></Nav.Link>
-            <Nav.Link><HashLink to="/DashboardMhs/#kuliah-mhs">Kuliah</HashLink></Nav.Link>
+            <Nav.Link href="/DashboardMhs">Beranda</Nav.Link>
+            <Nav.Link href="#kuliah-mhs">Kuliah</Nav.Link>
             {props.withSearch && (
               <div
                 className={`d-flex align-items-center justify-content-center bg-dark`}
@@ -75,7 +72,7 @@ export default function NavbarDashboardMhs(props) {
               title={localStorage.getItem("username")}
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item><Link to="/">Keluar</Link></NavDropdown.Item>
+              <NavDropdown.Item href="/">Keluar</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
