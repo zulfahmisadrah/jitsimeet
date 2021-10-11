@@ -16,12 +16,12 @@ function Feature() {
           <CardFeatures
             img={featureimage1}
             title="Manajemen Kuliah Mahasiswa"
-            desc="Membantu Mahasiswa Untuk Memonitoring Mata Kuliah Yang Di Programkan"
+            desc="Membantu Mahasiswa Untuk Memonitoring Mata Kuliah Yang Diprogramkan"
           />
           <CardFeatures
             img={featureimage2}
             title="Manajemen Mata Kuliah Dosen"
-            desc="Membantu Dosen Untuk Mengelola Mata Kuliah Yang Di Ajarkan"
+            desc="Membantu Dosen Untuk Mengelola Mata Kuliah Yang Diajarkan"
           />
         </Row>
       </Container>
