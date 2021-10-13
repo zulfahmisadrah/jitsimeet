@@ -23,6 +23,7 @@ const ListKuliah = (props) => {
 
   const [show, setShow] = useState(false);
   const [selectedData, setSelectedData] = useState(false);
+  const [selectedId, setSelectedId] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
 
@@ -38,7 +39,10 @@ const ListKuliah = (props) => {
     setShowEdit(true);
   }
   const handleCloseEdit = () => setShowEdit(false);
-  const handleCloseDelete = () => setShowDelete(true);
+  const handleShowDelete = (id) => {
+    setSelectedId(id)
+    setShowDelete(true);
+  }
 
   const confirmDeleteAction = (id) => {
     console.log("id", id);
@@ -231,7 +235,7 @@ const ListKuliah = (props) => {
                         <span>Edit</span>
                       </Button>
                       {/* </Link> */}
-                      <Button onClick={() => handleCloseDelete(user.id)}
+                      <Button onClick={() => handleShowDelete(user.id)}
                         className="m-2"
                         variant="danger">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -247,7 +251,7 @@ const ListKuliah = (props) => {
                       </Modal.Header>
                       <Modal.Body>
                         <p>Yakin Mau Hapus ?</p>
-                        <Button onClick={() => confirmDeleteAction(user.id)}>
+                        <Button onClick={() => confirmDeleteAction(selectedId)}>
                           Ya
                         </Button>{" "}
                         <Button
